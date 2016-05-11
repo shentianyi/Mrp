@@ -1,5 +1,6 @@
 ﻿Imports KskPlugInSharedObject
 Imports System.IO.Path
+Imports System.IO
 
 Public Class MrpMain
     '1 get grassMPS source
@@ -13,6 +14,7 @@ Public Class MrpMain
         dbconn = db
         round = Now.ToString("yyyyMMddhhmmss")
     End Sub
+
     Public Sub Start()
         Try
             Init()
@@ -25,16 +27,19 @@ Public Class MrpMain
 
         End Try
     End Sub
-    Private Sub Init()
+    Public Sub Init()
         'clear the working table
-        Dim db As MrpDataDataContext = New MrpDataDataContext
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+
+        Dim clearScript As String = File.ReadAllText(My.Application.Info.DirectoryPath & Combine("\dbscripts", "clearData.txt"))
+
         Try
             If db.DatabaseExists Then
-                db.DeleteDatabase()
-                If Not db.DatabaseExists Then
-                    db.CreateDatabase()
-                End If
+                db.ExecuteCommand(clearScript)
+            Else
+                Throw New Exception("指定数据库不存在")
             End If
+
         Catch ex As Exception
             Throw New Exception("重建工作数据库时出错", ex)
         End Try
@@ -42,7 +47,7 @@ Public Class MrpMain
 
 
 
-    Private Sub DownloadOrderedPart()
+    Public Sub DownloadOrderedPart()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim parts As List(Of String) = New List(Of String)
         parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
@@ -51,13 +56,13 @@ Public Class MrpMain
         excuteAssembly("PO", data)
     End Sub
 
-    Private Sub DownloadProductionPlan()
+    Public Sub DownloadProductionPlan()
         Dim data As ProcessData = New ProcessData
         data.Data.Add("db", dbconn)
         excuteAssembly("PP", data)
     End Sub
 
-    Private Sub DownloadPartVendor()
+    Public Sub DownloadPartVendor()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim parts As List(Of String) = New List(Of String)
         parts = (From mrpPart In db.Exe_NetMrps Select mrpPart.partId Distinct).ToList
@@ -67,7 +72,7 @@ Public Class MrpMain
         excuteAssembly("VENDOR", data)
     End Sub
 
-    Private Sub DownloadBom()
+    Public Sub DownloadBom()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim parts As List(Of String) = New List(Of String)
 
@@ -81,7 +86,7 @@ Public Class MrpMain
         excuteAssembly("BOM", data)
     End Sub
 
-    Private Sub DownloadInventory(type As String)
+    Public Sub DownloadInventory(type As String)
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim parts As List(Of String) = New List(Of String)
         If type = "MRP" Then
@@ -99,22 +104,23 @@ Public Class MrpMain
         excuteAssembly("INV", data)
     End Sub
 
-    Private Sub excuteAssembly(type As String, data As ProcessData)
-        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
-        Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
-        If exes.Count = 0 Then
-            Throw New Exception("执行外接程序" & type & "时没有找到相应插件")
-        Else
-            For Each plug In exes
-                Dim result As ProcessResult = ExternalProcess.Start(My.Application.Info.DirectoryPath & Combine("\Plugins", plug.assemblyFile), plug.type, plug.method, data)
-                If result.ResultCode = 0 Then
-                    Throw New Exception("执行插件类型" & plug.pluginType & "时出错:" & result.FormattedErrors)
-                End If
-            Next
-        End If
+    Public Sub excuteAssembly(type As String, data As ProcessData)
+        'Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        'Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
+        'If exes.Count = 0 Then
+        '    Throw New Exception("执行外接程序" & type & "时没有找到相应插件")
+        'Else
+        '    For Each plug In exes
+        '        Dim result As ProcessResult = ExternalProcess.Start(My.Application.Info.DirectoryPath & Combine("\Plugins", plug.assemblyFile), plug.type, plug.method, data)
+        '        If result.ResultCode = 0 Then
+        '            Throw New Exception("执行插件类型" & plug.pluginType & "时出错:" & result.FormattedErrors)
+        '        End If
+        '    Next
+        'End If
+
     End Sub
 
-    Private Sub GenerateGrossMps()
+    Public Sub GenerateGrossMps()
         DownloadProductionPlan()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossMpses As List(Of Exe_GrossMp) = New List(Of Exe_GrossMp)
@@ -122,7 +128,7 @@ Public Class MrpMain
             grossMpses.Add(New Exe_GrossMp With {.assemblyPartId =
                            plan.assemblyPartId, .bomId = plan.bomId,
                            .requiredTime = plan.time, .source = plan.planId,
-                           .mrpRound = Me.round})
+                           .mrpRound = Me.round, .quantity = plan.quantity})
         Next
         db.Exe_GrossMps.InsertAllOnSubmit(grossMpses)
         db.SubmitChanges()
@@ -130,7 +136,7 @@ Public Class MrpMain
         grossMpses = Nothing
     End Sub
 
-    Private Sub GenerateNetMps()
+    Public Sub GenerateNetMps()
         DownloadInventory("MPS")
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMps
@@ -171,7 +177,7 @@ Public Class MrpMain
         db.Dispose()
     End Sub
 
-    Private Sub GenerateGrossMrp()
+    Public Sub GenerateGrossMrp()
         DownloadBom()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim rowMrps As List(Of Exe_GrossMrp) = New List(Of Exe_GrossMrp)
@@ -200,7 +206,7 @@ Public Class MrpMain
         db.Dispose()
     End Sub
 
-    Private Sub GenerateNetMrp()
+    Public Sub GenerateNetMrp()
         ''获取减去在库库存
         ''获取减去未关闭采购订单
         ''获取减去批次过期库存
@@ -236,7 +242,7 @@ Public Class MrpMain
             If gross IsNot Nothing Then
                 For Each existOrder In ordered
                     If String.Compare(existOrder.partId, gross.partId, True) = 0 Then
-                        If existOrder.arriveTime > gross.requiredDate Then
+                        If existOrder.arriveTime <= gross.requiredDate Then
                             If existOrder.quantity >= gross.quantity Then
                                 existOrder.quantity = existOrder.quantity - gross.quantity
                                 gross = Nothing
@@ -257,9 +263,15 @@ Public Class MrpMain
                 nets.Add(net)
             End If
         Next
+        db.Exe_NetMrps.InsertAllOnSubmit(nets)
+        db.SubmitChanges()
+        db.Dispose()
+        invs = Nothing
+        ordered = Nothing
+        nets = Nothing
     End Sub
 
-    Private Sub GenerateResult()
+    Public Sub GenerateResult()
         DownloadPartVendor()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim orders As List(Of Exe_MrpOrder) = New List(Of Exe_MrpOrder)
@@ -272,7 +284,7 @@ Public Class MrpMain
                                  .quantity = uniquePart.nrofquantity,
                                  .requiredDate = uniquePart.requiredDate,
                                  .vendorId = config.vendorId,
-                                 .orderDate = uniquePart.requiredDate.AddDays(config.leadTime)
+                                 .orderDate = uniquePart.requiredDate.AddDays(-config.leadTime)
                                  })
 
             End If
@@ -283,7 +295,7 @@ Public Class MrpMain
         db.Dispose()
     End Sub
 
-    Private Sub SendResult()
+    Public Sub SendResult()
 
     End Sub
 End Class

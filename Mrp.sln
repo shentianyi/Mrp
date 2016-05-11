@@ -13,6 +13,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UnitTestProject1", "UnitTes
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KskPlugInSharedObject", "KskPlugInSharedObject\KskPlugInSharedObject.vbproj", "{C78BE146-090F-44C7-B3BF-E0A328335422}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestMrp", "TestMrp\TestMrp.vbproj", "{F5A9122B-E36A-40C7-8EDD-B890CEFB752B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C78BE146-090F-44C7-B3BF-E0A328335422}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C78BE146-090F-44C7-B3BF-E0A328335422}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C78BE146-090F-44C7-B3BF-E0A328335422}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5A9122B-E36A-40C7-8EDD-B890CEFB752B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A9122B-E36A-40C7-8EDD-B890CEFB752B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A9122B-E36A-40C7-8EDD-B890CEFB752B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A9122B-E36A-40C7-8EDD-B890CEFB752B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

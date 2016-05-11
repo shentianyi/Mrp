@@ -21,3 +21,5 @@ D:\dev\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
 D:\dev\Mrp\Mrp\obj\Debug\Mrp.dll
 D:\dev\Mrp\Mrp\obj\Debug\Mrp.xml
 D:\dev\Mrp\Mrp\obj\Debug\Mrp.pdb
+D:\dev\Mrp\Mrp\bin\Debug\dbscripts\clearData.txt
+D:\dev\Mrp\Mrp\bin\Debug\dbscripts\create.txt
