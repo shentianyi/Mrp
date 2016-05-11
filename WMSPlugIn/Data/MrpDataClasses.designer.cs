@@ -36,6 +36,9 @@ namespace WMSPlugIn.Data
     partial void InsertSys_Plugin(Sys_Plugin instance);
     partial void UpdateSys_Plugin(Sys_Plugin instance);
     partial void DeleteSys_Plugin(Sys_Plugin instance);
+    partial void InsertPlugin_WMS_Setting(Plugin_WMS_Setting instance);
+    partial void UpdatePlugin_WMS_Setting(Plugin_WMS_Setting instance);
+    partial void DeletePlugin_WMS_Setting(Plugin_WMS_Setting instance);
     #endregion
 		
 		public MrpDataClassesDataContext() : 
@@ -81,6 +84,14 @@ namespace WMSPlugIn.Data
 			get
 			{
 				return this.GetTable<Sys_Plugin>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Plugin_WMS_Setting> Plugin_WMS_Setting
+		{
+			get
+			{
+				return this.GetTable<Plugin_WMS_Setting>();
 			}
 		}
 	}
@@ -448,6 +459,116 @@ namespace WMSPlugIn.Data
 					this._seq = value;
 					this.SendPropertyChanged("seq");
 					this.OnseqChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Plugin_WMS_Setting")]
+	public partial class Plugin_WMS_Setting : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _host;
+		
+		private string _inventoyApi;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnhostChanging(string value);
+    partial void OnhostChanged();
+    partial void OninventoyApiChanging(string value);
+    partial void OninventoyApiChanged();
+    #endregion
+		
+		public Plugin_WMS_Setting()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_host", DbType="VarChar(50)")]
+		public string host
+		{
+			get
+			{
+				return this._host;
+			}
+			set
+			{
+				if ((this._host != value))
+				{
+					this.OnhostChanging(value);
+					this.SendPropertyChanging();
+					this._host = value;
+					this.SendPropertyChanged("host");
+					this.OnhostChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inventoyApi", DbType="VarChar(50)")]
+		public string inventoyApi
+		{
+			get
+			{
+				return this._inventoyApi;
+			}
+			set
+			{
+				if ((this._inventoyApi != value))
+				{
+					this.OninventoyApiChanging(value);
+					this.SendPropertyChanging();
+					this._inventoyApi = value;
+					this.SendPropertyChanged("inventoyApi");
+					this.OninventoyApiChanged();
 				}
 			}
 		}

@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WMSPlugIn</RootNamespace>
     <AssemblyName>WMSPlugIn</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,9 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThridPart\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,19 +50,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Implement\BaseRep.cs" />
+    <Compile Include="Data\Implement\DataInventoryRep.cs" />
+    <Compile Include="Data\Implement\SettingRep.cs" />
+    <Compile Include="Data\Interface\IDataInventoryRep.cs" />
+    <Compile Include="Data\Interface\IBaseRep.cs" />
+    <Compile Include="Data\Interface\ISettingRep.cs" />
+    <Compile Include="Data\IUnitOfWork.cs" />
+    <Compile Include="Data\MrpDataClasses.cs">
+      <DependentUpon>MrpDataClasses.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Data\MrpDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MrpDataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Data\MrpDataClassesDataContext.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\IStorageService.cs" />
-    <Compile Include="Service\StorageService.cs" />
+    <Compile Include="WmsRest\JsonUtil.cs" />
+    <Compile Include="WmsRest\PartStock.cs" />
+    <Compile Include="WmsRest\WmsRestClient.cs" />
+    <Compile Include="Service\IInventoryService.cs" />
+    <Compile Include="Service\InventoryService.cs" />
+    <Compile Include="Service\Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">
@@ -62,8 +86,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\Implement\" />
-    <Folder Include="Data\Interface\" />
+    <Content Include="ThridPart\RestSharp.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

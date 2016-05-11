@@ -68,16 +68,6 @@
       <Column Name="quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.Sys_Plugin" Member="Sys_Plugins">
-    <Type Name="Sys_Plugin">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="pluginType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="assemblyFile" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="method" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.Exe_GrossMps" Member="Exe_GrossMps">
     <Type Name="Exe_GrossMp">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -98,6 +88,33 @@
       <Column Name="bomId" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="mrpRound" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Data_OrderedPart" Member="Data_OrderedParts">
+    <Type Name="Data_OrderedPart">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="partId" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="sourceId" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="arriveTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_SumOfNetMrp" Member="View_SumOfNetMrps">
+    <Type Name="View_SumOfNetMrp">
+      <Column Name="partId" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="requiredDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nrofquantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sys_Plugin" Member="Sys_Plugins">
+    <Type Name="Sys_Plugin">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pluginType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="assemblyFile" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="type" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="method" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="seq" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

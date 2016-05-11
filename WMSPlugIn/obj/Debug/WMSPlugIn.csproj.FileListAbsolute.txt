@@ -7,3 +7,4 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.csprojResol
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.pdb
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll.config
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\RestSharp.dll

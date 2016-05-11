@@ -1,0 +1,9 @@
+﻿1. 在数据库 Sys_Plugin 表中插入以下数据
+  insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('WMS Plugin','INV','WMSPlugIn.dll','InventoryService','GetAndCreatePartsInventory',1)
+
+2. 在数据库 Plugin_WMS_Setting 表中插入以下数据,其中host是wms的服务器地址
+  insert into [Mrp].[dbo].[Plugin_WMS_Setting](host,inventoryApi)
+  values(N'http://192.168.1.12:3000',N'/api/v4/storages/part_stock')
+
+3. 引用RestSharp.dll和WMSPlugIn.dll

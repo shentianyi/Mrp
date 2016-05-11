@@ -13,3 +13,11 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.xml
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll.config
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.xml
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\CookComputing.XmlRpcV2.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.xml

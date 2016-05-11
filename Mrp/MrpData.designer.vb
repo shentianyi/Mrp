@@ -73,12 +73,6 @@ Partial Public Class MrpDataDataContext
     End Sub
   Partial Private Sub DeleteExe_NetMrp(instance As Exe_NetMrp)
     End Sub
-  Partial Private Sub InsertSys_Plugin(instance As Sys_Plugin)
-    End Sub
-  Partial Private Sub UpdateSys_Plugin(instance As Sys_Plugin)
-    End Sub
-  Partial Private Sub DeleteSys_Plugin(instance As Sys_Plugin)
-    End Sub
   Partial Private Sub InsertExe_GrossMp(instance As Exe_GrossMp)
     End Sub
   Partial Private Sub UpdateExe_GrossMp(instance As Exe_GrossMp)
@@ -90,6 +84,18 @@ Partial Public Class MrpDataDataContext
   Partial Private Sub UpdateExe_NetMp(instance As Exe_NetMp)
     End Sub
   Partial Private Sub DeleteExe_NetMp(instance As Exe_NetMp)
+    End Sub
+  Partial Private Sub InsertData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
+  Partial Private Sub UpdateData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
+  Partial Private Sub DeleteData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
+  Partial Private Sub InsertSys_Plugin(instance As Sys_Plugin)
+    End Sub
+  Partial Private Sub UpdateSys_Plugin(instance As Sys_Plugin)
+    End Sub
+  Partial Private Sub DeleteSys_Plugin(instance As Sys_Plugin)
     End Sub
   #End Region
 	
@@ -160,12 +166,6 @@ Partial Public Class MrpDataDataContext
 		End Get
 	End Property
 	
-	Public ReadOnly Property Sys_Plugins() As System.Data.Linq.Table(Of Sys_Plugin)
-		Get
-			Return Me.GetTable(Of Sys_Plugin)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Exe_GrossMps() As System.Data.Linq.Table(Of Exe_GrossMp)
 		Get
 			Return Me.GetTable(Of Exe_GrossMp)
@@ -175,6 +175,24 @@ Partial Public Class MrpDataDataContext
 	Public ReadOnly Property Exe_NetMps() As System.Data.Linq.Table(Of Exe_NetMp)
 		Get
 			Return Me.GetTable(Of Exe_NetMp)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Data_OrderedParts() As System.Data.Linq.Table(Of Data_OrderedPart)
+		Get
+			Return Me.GetTable(Of Data_OrderedPart)
+		End Get
+	End Property
+	
+	Public ReadOnly Property View_SumOfNetMrps() As System.Data.Linq.Table(Of View_SumOfNetMrp)
+		Get
+			Return Me.GetTable(Of View_SumOfNetMrp)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Sys_Plugins() As System.Data.Linq.Table(Of Sys_Plugin)
+		Get
+			Return Me.GetTable(Of Sys_Plugin)
 		End Get
 	End Property
 End Class
@@ -1355,178 +1373,6 @@ Partial Public Class Exe_NetMrp
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Sys_Plugin")>  _
-Partial Public Class Sys_Plugin
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id As Integer
-	
-	Private _name As String
-	
-	Private _pluginType As String
-	
-	Private _assemblyFile As String
-	
-	Private _type As String
-	
-	Private _method As String
-	
-    #Region "可扩展性方法定义"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnidChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnidChanged()
-    End Sub
-    Partial Private Sub OnnameChanging(value As String)
-    End Sub
-    Partial Private Sub OnnameChanged()
-    End Sub
-    Partial Private Sub OnpluginTypeChanging(value As String)
-    End Sub
-    Partial Private Sub OnpluginTypeChanged()
-    End Sub
-    Partial Private Sub OnassemblyFileChanging(value As String)
-    End Sub
-    Partial Private Sub OnassemblyFileChanged()
-    End Sub
-    Partial Private Sub OntypeChanging(value As String)
-    End Sub
-    Partial Private Sub OntypeChanged()
-    End Sub
-    Partial Private Sub OnmethodChanging(value As String)
-    End Sub
-    Partial Private Sub OnmethodChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id() As Integer
-		Get
-			Return Me._id
-		End Get
-		Set
-			If ((Me._id = value)  _
-						= false) Then
-				Me.OnidChanging(value)
-				Me.SendPropertyChanging
-				Me._id = value
-				Me.SendPropertyChanged("id")
-				Me.OnidChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_name", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
-	Public Property name() As String
-		Get
-			Return Me._name
-		End Get
-		Set
-			If (String.Equals(Me._name, value) = false) Then
-				Me.OnnameChanging(value)
-				Me.SendPropertyChanging
-				Me._name = value
-				Me.SendPropertyChanged("name")
-				Me.OnnameChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_pluginType", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property pluginType() As String
-		Get
-			Return Me._pluginType
-		End Get
-		Set
-			If (String.Equals(Me._pluginType, value) = false) Then
-				Me.OnpluginTypeChanging(value)
-				Me.SendPropertyChanging
-				Me._pluginType = value
-				Me.SendPropertyChanged("pluginType")
-				Me.OnpluginTypeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_assemblyFile", DbType:="Text NOT NULL", CanBeNull:=false, UpdateCheck:=UpdateCheck.Never)>  _
-	Public Property assemblyFile() As String
-		Get
-			Return Me._assemblyFile
-		End Get
-		Set
-			If (String.Equals(Me._assemblyFile, value) = false) Then
-				Me.OnassemblyFileChanging(value)
-				Me.SendPropertyChanging
-				Me._assemblyFile = value
-				Me.SendPropertyChanged("assemblyFile")
-				Me.OnassemblyFileChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_type", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
-	Public Property type() As String
-		Get
-			Return Me._type
-		End Get
-		Set
-			If (String.Equals(Me._type, value) = false) Then
-				Me.OntypeChanging(value)
-				Me.SendPropertyChanging
-				Me._type = value
-				Me.SendPropertyChanged("type")
-				Me.OntypeChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_method", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
-	Public Property method() As String
-		Get
-			Return Me._method
-		End Get
-		Set
-			If (String.Equals(Me._method, value) = false) Then
-				Me.OnmethodChanging(value)
-				Me.SendPropertyChanging
-				Me._method = value
-				Me.SendPropertyChanged("method")
-				Me.OnmethodChanged
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Exe_GrossMps")>  _
 Partial Public Class Exe_GrossMp
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -1896,6 +1742,403 @@ Partial Public Class Exe_NetMp
 				Me._quantity = value
 				Me.SendPropertyChanged("quantity")
 				Me.OnquantityChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Data_OrderedPart")>  _
+Partial Public Class Data_OrderedPart
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _partId As String
+	
+	Private _sourceId As String
+	
+	Private _quantity As Double
+	
+	Private _arriveTime As Date
+	
+    #Region "可扩展性方法定义"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnpartIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnpartIdChanged()
+    End Sub
+    Partial Private Sub OnsourceIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnsourceIdChanged()
+    End Sub
+    Partial Private Sub OnquantityChanging(value As Double)
+    End Sub
+    Partial Private Sub OnquantityChanged()
+    End Sub
+    Partial Private Sub OnarriveTimeChanging(value As Date)
+    End Sub
+    Partial Private Sub OnarriveTimeChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_partId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property partId() As String
+		Get
+			Return Me._partId
+		End Get
+		Set
+			If (String.Equals(Me._partId, value) = false) Then
+				Me.OnpartIdChanging(value)
+				Me.SendPropertyChanging
+				Me._partId = value
+				Me.SendPropertyChanged("partId")
+				Me.OnpartIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sourceId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property sourceId() As String
+		Get
+			Return Me._sourceId
+		End Get
+		Set
+			If (String.Equals(Me._sourceId, value) = false) Then
+				Me.OnsourceIdChanging(value)
+				Me.SendPropertyChanging
+				Me._sourceId = value
+				Me.SendPropertyChanged("sourceId")
+				Me.OnsourceIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_quantity", DbType:="Float NOT NULL")>  _
+	Public Property quantity() As Double
+		Get
+			Return Me._quantity
+		End Get
+		Set
+			If ((Me._quantity = value)  _
+						= false) Then
+				Me.OnquantityChanging(value)
+				Me.SendPropertyChanging
+				Me._quantity = value
+				Me.SendPropertyChanged("quantity")
+				Me.OnquantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_arriveTime", DbType:="DateTime NOT NULL")>  _
+	Public Property arriveTime() As Date
+		Get
+			Return Me._arriveTime
+		End Get
+		Set
+			If ((Me._arriveTime = value)  _
+						= false) Then
+				Me.OnarriveTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._arriveTime = value
+				Me.SendPropertyChanged("arriveTime")
+				Me.OnarriveTimeChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.View_SumOfNetMrp")>  _
+Partial Public Class View_SumOfNetMrp
+	
+	Private _partId As String
+	
+	Private _requiredDate As Date
+	
+	Private _nrofquantity As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_partId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property partId() As String
+		Get
+			Return Me._partId
+		End Get
+		Set
+			If (String.Equals(Me._partId, value) = false) Then
+				Me._partId = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_requiredDate", DbType:="Date NOT NULL")>  _
+	Public Property requiredDate() As Date
+		Get
+			Return Me._requiredDate
+		End Get
+		Set
+			If ((Me._requiredDate = value)  _
+						= false) Then
+				Me._requiredDate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_nrofquantity", DbType:="Float")>  _
+	Public Property nrofquantity() As System.Nullable(Of Double)
+		Get
+			Return Me._nrofquantity
+		End Get
+		Set
+			If (Me._nrofquantity.Equals(value) = false) Then
+				Me._nrofquantity = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Sys_Plugin")>  _
+Partial Public Class Sys_Plugin
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _name As String
+	
+	Private _pluginType As String
+	
+	Private _assemblyFile As String
+	
+	Private _type As String
+	
+	Private _method As String
+	
+	Private _seq As System.Nullable(Of Integer)
+	
+    #Region "可扩展性方法定义"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnnameChanging(value As String)
+    End Sub
+    Partial Private Sub OnnameChanged()
+    End Sub
+    Partial Private Sub OnpluginTypeChanging(value As String)
+    End Sub
+    Partial Private Sub OnpluginTypeChanged()
+    End Sub
+    Partial Private Sub OnassemblyFileChanging(value As String)
+    End Sub
+    Partial Private Sub OnassemblyFileChanged()
+    End Sub
+    Partial Private Sub OntypeChanging(value As String)
+    End Sub
+    Partial Private Sub OntypeChanged()
+    End Sub
+    Partial Private Sub OnmethodChanging(value As String)
+    End Sub
+    Partial Private Sub OnmethodChanged()
+    End Sub
+    Partial Private Sub OnseqChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnseqChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_name", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property name() As String
+		Get
+			Return Me._name
+		End Get
+		Set
+			If (String.Equals(Me._name, value) = false) Then
+				Me.OnnameChanging(value)
+				Me.SendPropertyChanging
+				Me._name = value
+				Me.SendPropertyChanged("name")
+				Me.OnnameChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_pluginType", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property pluginType() As String
+		Get
+			Return Me._pluginType
+		End Get
+		Set
+			If (String.Equals(Me._pluginType, value) = false) Then
+				Me.OnpluginTypeChanging(value)
+				Me.SendPropertyChanging
+				Me._pluginType = value
+				Me.SendPropertyChanged("pluginType")
+				Me.OnpluginTypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_assemblyFile", DbType:="Text NOT NULL", CanBeNull:=false, UpdateCheck:=UpdateCheck.Never)>  _
+	Public Property assemblyFile() As String
+		Get
+			Return Me._assemblyFile
+		End Get
+		Set
+			If (String.Equals(Me._assemblyFile, value) = false) Then
+				Me.OnassemblyFileChanging(value)
+				Me.SendPropertyChanging
+				Me._assemblyFile = value
+				Me.SendPropertyChanged("assemblyFile")
+				Me.OnassemblyFileChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_type", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property type() As String
+		Get
+			Return Me._type
+		End Get
+		Set
+			If (String.Equals(Me._type, value) = false) Then
+				Me.OntypeChanging(value)
+				Me.SendPropertyChanging
+				Me._type = value
+				Me.SendPropertyChanged("type")
+				Me.OntypeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_method", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property method() As String
+		Get
+			Return Me._method
+		End Get
+		Set
+			If (String.Equals(Me._method, value) = false) Then
+				Me.OnmethodChanging(value)
+				Me.SendPropertyChanging
+				Me._method = value
+				Me.SendPropertyChanged("method")
+				Me.OnmethodChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_seq", DbType:="Int")>  _
+	Public Property seq() As System.Nullable(Of Integer)
+		Get
+			Return Me._seq
+		End Get
+		Set
+			If (Me._seq.Equals(value) = false) Then
+				Me.OnseqChanging(value)
+				Me.SendPropertyChanging
+				Me._seq = value
+				Me.SendPropertyChanged("seq")
+				Me.OnseqChanged
 			End If
 		End Set
 	End Property

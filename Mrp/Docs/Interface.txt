@@ -29,7 +29,7 @@ Plugin Job: Get BOM and insert to the table
 Plugin Table: db.Data_BOM
 Plugin Parameter: KskPlugInSharedObject.ProcessData 
 				 ProcessData["db"]: String, connection string of the parent system
-				 ProcessData["partsBomVersion"]:Dictionary of String, Key is the part number and value is bom version
+				 ProcessData["parts"]:List of string, part numbers
 
 Action: Fill the db.Data_Bom Table
 Return: KskPlugInSharedObject.ProcessResult

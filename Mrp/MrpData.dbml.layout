@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 9" name="MrpData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.375, 9" name="MrpData">
   <DataContextMoniker Name="/MrpDataDataContext" />
   <nestedChildShapes>
     <classShape Id="fc5758a2-71e2-40b4-8fd3-21cd39d651db" absoluteBounds="0.75, 0.75, 2, 1.9535852050781251">
@@ -44,12 +44,6 @@
         <elementListCompartment Id="be6e3b70-21bd-4e77-b256-8f1d9099e582" absoluteBounds="6.765, 7.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="16b0a56c-d81e-451e-97b7-32ca587fddf3" absoluteBounds="9.75, 0.75, 2, 1.9535852050781253">
-      <DataClassMoniker Name="/MrpDataDataContext/Sys_Plugin" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1c8c01d9-9994-4955-8b59-cfef458da936" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.393585205078125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f680bbe2-f2bd-4506-9bc0-5f60acbffa9a" absoluteBounds="3.75, 6.125, 2, 2.1446048990885416">
       <DataClassMoniker Name="/MrpDataDataContext/Exe_GrossMp" />
       <nestedChildShapes>
@@ -60,6 +54,24 @@
       <DataClassMoniker Name="/MrpDataDataContext/Exe_NetMp" />
       <nestedChildShapes>
         <elementListCompartment Id="7c2a0598-35c2-493a-86a6-d90dd4c93036" absoluteBounds="6.265, 6.21, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4e06f2b5-2dbd-48dc-b1b6-60ca88c3f6df" absoluteBounds="2.25, 1.625, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/MrpDataDataContext/Data_OrderedPart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9828642-1b9f-4d86-97a9-693fd01fa891" absoluteBounds="2.265, 2.085, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b4e5da3-6baf-4ed4-92b5-3b278fc6d0cb" absoluteBounds="6, 1, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/MrpDataDataContext/View_SumOfNetMrp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="293cc465-2142-4b91-8203-35f28598d893" absoluteBounds="6.0150000000000006, 1.46, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4345f57-64a9-49b4-8324-7c1509da6fba" absoluteBounds="11.125, 2.625, 2, 2.1446048990885416">
+      <DataClassMoniker Name="/MrpDataDataContext/Sys_Plugin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78308ae1-10dd-4fac-93eb-c0e485272321" absoluteBounds="11.14, 3.085, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

@@ -14,5 +14,11 @@
         <elementListCompartment Id="f6bc39de-b716-49ab-82fa-b2551315f266" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.5846048990885415" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="0414dcb1-d9af-4c53-a2d0-5824e0e5bf31" absoluteBounds="0.75, 3.125, 2, 1.3805261230468751">
+      <DataClassMoniker Name="/MrpDataClassesDataContext/Plugin_WMS_Setting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a301c547-dbf8-426c-8ce7-b9309dd16aab" absoluteBounds="0.76500000000000012, 3.585, 1.9700000000000002, 0.820526123046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

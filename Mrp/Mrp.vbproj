@@ -122,6 +122,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docs\Interface.txt" />
+    <Content Include="Docs\WMSPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">
+      <Project>{c78be146-090f-44c7-b3bf-e0a328335422}</Project>
+      <Name>KskPlugInSharedObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

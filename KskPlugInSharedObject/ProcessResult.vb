@@ -37,6 +37,17 @@
         End Set
     End Property
 
+    Public ReadOnly Property FormattedErrors As String
+        Get
+            Dim str As String = ""
+            For Each pairs As KeyValuePair(Of String, String) In Errors
+                str = str & pairs.Key & ": " & pairs.Value & vbNewLine
+
+            Next
+            Return str
+        End Get
+    End Property
+
     Public Property ReturnedValues As Hashtable
         Get
             If _returnedValues Is Nothing Then
