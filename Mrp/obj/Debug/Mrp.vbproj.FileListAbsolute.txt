@@ -7,3 +7,9 @@ c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.vbpr
 c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.dll
 c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.xml
 c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbprojResolveAssemblyReference.cache
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.Resources.resources
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.xml
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.pdb

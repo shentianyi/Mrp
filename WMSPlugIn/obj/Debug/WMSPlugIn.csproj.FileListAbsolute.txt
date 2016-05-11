@@ -1,0 +1,9 @@
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.xml
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll.config
