@@ -13,7 +13,6 @@
     Public Sub Start()
         Try
             Init()
-            DownloadData()
             GenerateGrossMps()
             GenerateNetMps()
             GenerateGrossMrp()
@@ -62,13 +61,14 @@
         Throw New NotImplementedException()
     End Sub
 
-    Private Sub downloadInventory()
+    Private Sub downloadInventory(type As String)
         Throw New NotImplementedException()
     End Sub
 
 
 
     Private Sub GenerateGrossMps()
+        downloadProductionPlan()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossMpses As List(Of Exe_GrossMp) = New List(Of Exe_GrossMp)
         For Each plan In db.Data_ProductionPlans
@@ -84,6 +84,7 @@
     End Sub
 
     Private Sub GenerateNetMps()
+        downloadInventory("MPS")
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMps
                                             Select gro.assemblyPartId Distinct
@@ -123,21 +124,21 @@
     End Sub
 
     Private Sub GenerateGrossMrp()
+        downloadBom()
+
+
 
     End Sub
 
     Private Sub GenerateNetMrp()
-
-    End Sub
-
-    Private Sub BalanceMrp()
         ''获取减去在库库存
         ''获取减去未关闭采购订单
         ''获取减去批次过期库存
         ''获取加上安全库存额
+        downloadOrderedPart()
+        downloadInventory("MRP")
 
     End Sub
-
 
     Private Sub GenerateResult()
 

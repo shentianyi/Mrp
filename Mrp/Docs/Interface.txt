@@ -1,5 +1,5 @@
 ﻿Plugin Interface
-
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plugin Type: INV
 Plugin Job: Get inventory and insert to the table
 Plugin Table: db.Data_Inventory
@@ -8,6 +8,62 @@ Plugin Parameter: KskPlugInSharedObject.ProcessData
 				 ProcessData["parts"]:List(of String): part id to get the inventory
 
 Action: Fill the db.Data_Inventory Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Plugin Type: PP
+Plugin Job: Get production plan and insert to the table
+Plugin Table: db.Data_ProductionPlan
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				 ProcessData["db"]: String, connection string of the parent system
+				
+Action: Fill the db.Data_ProductionPlan Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Plugin Type: BOM
+Plugin Job: Get BOM and insert to the table
+Plugin Table: db.Data_BOM
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				 ProcessData["db"]: String, connection string of the parent system
+				 ProcessData["partsBomVersion"]:Dictionary of String, Key is the part number and value is bom version
+
+Action: Fill the db.Data_Bom Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Plugin Type: ORDER
+Plugin Job: Get order and insert to the table
+Plugin Table: db.Data_OrderedPart
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				 ProcessData["db"]: String, connection string of the parent system
+				 ProcessData["parts"]: List of String, the part Id
+Action: Fill the db.Data_OrderedPart Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Plugin Type: VENDOR
+Plugin Job: Get Part Vendor and insert to the table
+Plugin Table: db.Data_PartVendor
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				 ProcessData["db"]: String, connection string of the parent system
+				 ProcessData["parts"]: List of String, the part Id
+Action: Fill the db.Data_PartVendorConfig Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Plugin Type: PO
+Plugin Job: Insert Purchase Order to 3-rd party system
+Plugin Table: Exe_MRPOrder
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				  ProcessData["db"]: String, connection string of the parent system
+Action: Integrate the order to other system
 Return: KskPlugInSharedObject.ProcessResult
 		ProcessResult.ResultCode: 0 - failed 1-successful
 		ProcessResult.Errors - fill the error if resultCode = 0
