@@ -91,6 +91,12 @@ Partial Public Class MrpDataDataContext
     End Sub
   Partial Private Sub DeleteExe_NetMp(instance As Exe_NetMp)
     End Sub
+  Partial Private Sub InsertData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
+  Partial Private Sub UpdateData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
+  Partial Private Sub DeleteData_OrderedPart(instance As Data_OrderedPart)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -175,6 +181,18 @@ Partial Public Class MrpDataDataContext
 	Public ReadOnly Property Exe_NetMps() As System.Data.Linq.Table(Of Exe_NetMp)
 		Get
 			Return Me.GetTable(Of Exe_NetMp)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Data_OrderedParts() As System.Data.Linq.Table(Of Data_OrderedPart)
+		Get
+			Return Me.GetTable(Of Data_OrderedPart)
+		End Get
+	End Property
+	
+	Public ReadOnly Property View_SumOfNetMrps() As System.Data.Linq.Table(Of View_SumOfNetMrp)
+		Get
+			Return Me.GetTable(Of View_SumOfNetMrp)
 		End Get
 	End Property
 End Class
@@ -1917,4 +1935,207 @@ Partial Public Class Exe_NetMp
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
 	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Data_OrderedPart")>  _
+Partial Public Class Data_OrderedPart
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id As Integer
+	
+	Private _partId As String
+	
+	Private _sourceId As String
+	
+	Private _quantity As Double
+	
+	Private _arriveTime As Date
+	
+    #Region "可扩展性方法定义"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnidChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnidChanged()
+    End Sub
+    Partial Private Sub OnpartIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnpartIdChanged()
+    End Sub
+    Partial Private Sub OnsourceIdChanging(value As String)
+    End Sub
+    Partial Private Sub OnsourceIdChanged()
+    End Sub
+    Partial Private Sub OnquantityChanging(value As Double)
+    End Sub
+    Partial Private Sub OnquantityChanged()
+    End Sub
+    Partial Private Sub OnarriveTimeChanging(value As Date)
+    End Sub
+    Partial Private Sub OnarriveTimeChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property id() As Integer
+		Get
+			Return Me._id
+		End Get
+		Set
+			If ((Me._id = value)  _
+						= false) Then
+				Me.OnidChanging(value)
+				Me.SendPropertyChanging
+				Me._id = value
+				Me.SendPropertyChanged("id")
+				Me.OnidChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_partId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property partId() As String
+		Get
+			Return Me._partId
+		End Get
+		Set
+			If (String.Equals(Me._partId, value) = false) Then
+				Me.OnpartIdChanging(value)
+				Me.SendPropertyChanging
+				Me._partId = value
+				Me.SendPropertyChanged("partId")
+				Me.OnpartIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sourceId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property sourceId() As String
+		Get
+			Return Me._sourceId
+		End Get
+		Set
+			If (String.Equals(Me._sourceId, value) = false) Then
+				Me.OnsourceIdChanging(value)
+				Me.SendPropertyChanging
+				Me._sourceId = value
+				Me.SendPropertyChanged("sourceId")
+				Me.OnsourceIdChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_quantity", DbType:="Float NOT NULL")>  _
+	Public Property quantity() As Double
+		Get
+			Return Me._quantity
+		End Get
+		Set
+			If ((Me._quantity = value)  _
+						= false) Then
+				Me.OnquantityChanging(value)
+				Me.SendPropertyChanging
+				Me._quantity = value
+				Me.SendPropertyChanged("quantity")
+				Me.OnquantityChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_arriveTime", DbType:="DateTime NOT NULL")>  _
+	Public Property arriveTime() As Date
+		Get
+			Return Me._arriveTime
+		End Get
+		Set
+			If ((Me._arriveTime = value)  _
+						= false) Then
+				Me.OnarriveTimeChanging(value)
+				Me.SendPropertyChanging
+				Me._arriveTime = value
+				Me.SendPropertyChanged("arriveTime")
+				Me.OnarriveTimeChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.View_SumOfNetMrp")>  _
+Partial Public Class View_SumOfNetMrp
+	
+	Private _partId As String
+	
+	Private _requiredDate As Date
+	
+	Private _nrofquantity As System.Nullable(Of Double)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_partId", DbType:="VarChar(200) NOT NULL", CanBeNull:=false)>  _
+	Public Property partId() As String
+		Get
+			Return Me._partId
+		End Get
+		Set
+			If (String.Equals(Me._partId, value) = false) Then
+				Me._partId = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_requiredDate", DbType:="Date NOT NULL")>  _
+	Public Property requiredDate() As Date
+		Get
+			Return Me._requiredDate
+		End Get
+		Set
+			If ((Me._requiredDate = value)  _
+						= false) Then
+				Me._requiredDate = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_nrofquantity", DbType:="Float")>  _
+	Public Property nrofquantity() As System.Nullable(Of Double)
+		Get
+			Return Me._nrofquantity
+		End Get
+		Set
+			If (Me._nrofquantity.Equals(value) = false) Then
+				Me._nrofquantity = value
+			End If
+		End Set
+	End Property
 End Class

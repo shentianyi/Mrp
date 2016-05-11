@@ -37,31 +37,25 @@
         End Try
     End Sub
 
-    Private Sub DownloadData()
-        downloadProductionPlan()
-        downloadInventory()
-        downloadBom()
-        downloadPartVendor()
-        downloadOrderedPart()
-    End Sub
 
-    Private Sub downloadOrderedPart()
+
+    Private Sub DownloadOrderedPart()
         Throw New NotImplementedException()
     End Sub
 
-    Private Sub downloadProductionPlan()
+    Private Sub DownloadProductionPlan()
         Throw New NotImplementedException()
     End Sub
 
-    Private Sub downloadPartVendor()
+    Private Sub DownloadPartVendor()
         Throw New NotImplementedException()
     End Sub
 
-    Private Sub downloadBom()
+    Private Sub DownloadBom()
         Throw New NotImplementedException()
     End Sub
 
-    Private Sub downloadInventory(type As String)
+    Private Sub DownloadInventory(type As String)
         Throw New NotImplementedException()
     End Sub
 
@@ -118,6 +112,7 @@
             End If
         Next
         db.Exe_NetMps.InsertAllOnSubmit(nets)
+        db.SubmitChanges()
         invs = Nothing
         nets = Nothing
         db.Dispose()
@@ -125,9 +120,31 @@
 
     Private Sub GenerateGrossMrp()
         downloadBom()
-
-
-
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim rowMrps As List(Of Exe_GrossMrp) = New List(Of Exe_GrossMrp)
+        '1,net mps one by one loop
+        '2.find bom elements
+        '3.calculate the raw mrps
+        For Each net As Exe_NetMp In db.Exe_NetMps
+            Dim boms As IQueryable(Of Data_Bom) = (From bomele _
+                                                   In db.Data_Boms
+                                                   Where String.Compare(
+                                                       bomele.assemblyPartId, net.assemblyPartId) _
+                                                       = 0 And
+                                                   String.Compare(bomele.bomId, net.bomId) = 0
+                                                   Select bomele)
+            If boms.Count > 0 Then
+                For Each bom In boms
+                    rowMrps.Add(New Exe_GrossMrp With {.partId = bom.materialPartId, .quantity = net.quantity * bom.quantity, .requiredDate = net.requiredTime, .sourceDoc = net.source, .sourcePart = net.assemblyPartId})
+                Next
+            Else
+                Throw New Exception("零件" & net.assemblyPartId & "没有找到相应的BOM")
+            End If
+        Next
+        db.Exe_GrossMrps.InsertAllOnSubmit(rowMrps)
+        db.SubmitChanges()
+        rowMrps = Nothing
+        db.Dispose()
     End Sub
 
     Private Sub GenerateNetMrp()
@@ -135,12 +152,85 @@
         ''获取减去未关闭采购订单
         ''获取减去批次过期库存
         ''获取加上安全库存额
-        downloadOrderedPart()
-        downloadInventory("MRP")
+        DownloadOrderedPart()
+        DownloadInventory("MRP")
 
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMrps
+                                            Select gro.partId Distinct
+                                         ).ToList
+        Dim invs As List(Of Data_Inventory) = (From inv In db.Data_Inventories Where grossesId.Contains(inv.partId) Select inv).ToList
+        Dim ordered As List(Of Data_OrderedPart) = (From opart In db.Data_OrderedParts Where grossesId.Contains(opart.partId) Select opart).ToList
+        Dim nets As List(Of Exe_NetMrp) = New List(Of Exe_NetMrp)
+        invs.Sort(New Comparison(Of Data_Inventory)(Function(c, e) c.expireDate < e.expireDate))
+
+        For Each gross As Exe_GrossMrp In (From gro2 In db.Exe_GrossMrps Select gro2 Order By gro2.requiredDate Ascending)
+            invs.RemoveAll(Function(c) c Is Nothing)
+            For Each existInv In invs
+                If String.Compare(existInv.partId, gross.partId, True) = 0 Then
+                    If existInv.expireDate > gross.requiredDate Then
+                        If existInv.quantity >= gross.quantity Then
+                            existInv.quantity = existInv.quantity - gross.quantity
+                            gross = Nothing
+                            Exit For
+                        Else
+                            gross.quantity = gross.quantity - existInv.quantity
+                            existInv = Nothing
+                        End If
+                    End If
+                End If
+            Next
+            If gross IsNot Nothing Then
+                For Each existOrder In ordered
+                    If String.Compare(existOrder.partId, gross.partId, True) = 0 Then
+                        If existOrder.arriveTime > gross.requiredDate Then
+                            If existOrder.quantity >= gross.quantity Then
+                                existOrder.quantity = existOrder.quantity - gross.quantity
+                                gross = Nothing
+                                Exit For
+                            Else
+                                gross.quantity = gross.quantity - existOrder.quantity
+                                existOrder = Nothing
+                            End If
+                        End If
+                    End If
+                Next
+            End If
+            If gross IsNot Nothing Then
+                Dim net As Exe_NetMrp = New Exe_NetMrp With {.partId = gross.partId,
+                    .requiredDate = gross.requiredDate,
+                    .orderDate = gross.requiredDate,
+                    .quantity = gross.quantity}
+                nets.Add(net)
+            End If
+        Next
     End Sub
 
     Private Sub GenerateResult()
+        DownloadPartVendor()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim orders As List(Of Exe_MrpOrder) = New List(Of Exe_MrpOrder)
+        For Each uniquePart In db.View_SumOfNetMrps
+            Dim config As Data_PartVendorConfig = db.Data_PartVendorConfigs.FirstOrDefault(Function(c) String.Compare(c.partId, uniquePart.partId) = 0)
+            If config Is Nothing Then
+                Throw New Exception("没有找到零件" & uniquePart.partId & "与供应商的关系")
+            Else
+                orders.Add(New Exe_MrpOrder With {.partId = uniquePart.partId,
+                                 .quantity = uniquePart.nrofquantity,
+                                 .requiredDate = uniquePart.requiredDate,
+                                 .vendorId = config.vendorId,
+                                 .orderDate = uniquePart.requiredDate.AddDays(config.leadTime)
+                                 })
+
+            End If
+        Next
+        db.Exe_MrpOrders.InsertAllOnSubmit(orders)
+        db.SubmitChanges()
+        orders = Nothing
+        db.Dispose()
+    End Sub
+
+    Private Sub SendResult()
 
     End Sub
 End Class
