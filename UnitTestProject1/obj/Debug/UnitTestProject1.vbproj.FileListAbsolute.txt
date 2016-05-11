@@ -8,3 +8,19 @@ C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\D
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.xml
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+D:\dev\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\dev\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\dev\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.xml
+D:\dev\Mrp\UnitTestProject1\bin\Debug\KskPlugInSharedObject.dll
+D:\dev\Mrp\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\dev\Mrp\UnitTestProject1\bin\Debug\Mrp.dll
+D:\dev\Mrp\UnitTestProject1\bin\Debug\KskPlugInSharedObject.pdb
+D:\dev\Mrp\UnitTestProject1\bin\Debug\KskPlugInSharedObject.xml
+D:\dev\Mrp\UnitTestProject1\bin\Debug\Mrp.pdb
+D:\dev\Mrp\UnitTestProject1\bin\Debug\Mrp.xml
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.vbprojResolveAssemblyReference.cache
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.Resources.resources
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.vbproj.GenerateResource.Cache
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.xml
+D:\dev\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

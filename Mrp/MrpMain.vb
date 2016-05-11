@@ -1,4 +1,7 @@
-﻿Public Class MrpMain
+﻿Imports KskPlugInSharedObject
+Imports System.IO.Path
+
+Public Class MrpMain
     '1 get grassMPS source
     '2 get balance source
     '2 get timing rules
@@ -16,7 +19,7 @@
             GenerateGrossMps()
             GenerateNetMps()
             GenerateGrossMrp()
-            GenerateNetMrp
+            GenerateNetMrp()
             GenerateResult()
         Catch ex As Exception
 
@@ -40,29 +43,77 @@
 
 
     Private Sub DownloadOrderedPart()
-        Throw New NotImplementedException()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim parts As List(Of String) = New List(Of String)
+        parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        excuteAssembly("PO", data)
     End Sub
 
     Private Sub DownloadProductionPlan()
-        Throw New NotImplementedException()
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        excuteAssembly("PP", data)
     End Sub
 
     Private Sub DownloadPartVendor()
-        Throw New NotImplementedException()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim parts As List(Of String) = New List(Of String)
+        parts = (From mrpPart In db.Exe_NetMrps Select mrpPart.partId Distinct).ToList
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        data.Data.Add("parts", parts)
+        excuteAssembly("VENDOR", data)
     End Sub
 
     Private Sub DownloadBom()
-        Throw New NotImplementedException()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim boms As Dictionary(Of String, String) = New Dictionary(Of String, String)
+
+        ' Dim netMps As parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
+
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        data.Data.Add("partsBomVersion", boms)
+        excuteAssembly("BOM", data)
     End Sub
 
     Private Sub DownloadInventory(type As String)
-        Throw New NotImplementedException()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim parts As List(Of String) = New List(Of String)
+        If type = "MRP" Then
+            parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
+
+
+        ElseIf type = "MPS" Then
+            parts = (From mrpPart In db.Exe_GrossMps Select mrpPart.assemblyPartId Distinct).ToList
+        Else
+            Throw New Exception("无法启动库存下载，" & type & "无法辨认")
+        End If
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        data.Data.Add("parts", parts)
+        excuteAssembly("INV", data)
     End Sub
 
-
+    Private Sub excuteAssembly(type As String, data As ProcessData)
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
+        If exes.Count = 0 Then
+            Throw New Exception("执行外接程序" & type & "时没有找到相应插件")
+        Else
+            For Each plug In exes
+                Dim result As ProcessResult = ExternalProcess.Start(My.Application.Info.DirectoryPath & Combine("\Plugins", plug.assemblyFile), plug.type, plug.method, data)
+                If result.ResultCode = 0 Then
+                    Throw New Exception("执行插件类型" & plug.pluginType & "时出错:" & result.FormattedErrors)
+                End If
+            Next
+        End If
+    End Sub
 
     Private Sub GenerateGrossMps()
-        downloadProductionPlan()
+        DownloadProductionPlan()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossMpses As List(Of Exe_GrossMp) = New List(Of Exe_GrossMp)
         For Each plan In db.Data_ProductionPlans
@@ -78,7 +129,7 @@
     End Sub
 
     Private Sub GenerateNetMps()
-        downloadInventory("MPS")
+        DownloadInventory("MPS")
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMps
                                             Select gro.assemblyPartId Distinct
@@ -119,7 +170,7 @@
     End Sub
 
     Private Sub GenerateGrossMrp()
-        downloadBom()
+        DownloadBom()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim rowMrps As List(Of Exe_GrossMrp) = New List(Of Exe_GrossMrp)
         '1,net mps one by one loop
