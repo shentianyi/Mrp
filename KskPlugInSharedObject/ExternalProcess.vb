@@ -16,8 +16,6 @@ Public Class ExternalProcess
         Catch ex As Exception
             Throw New Exception("执行外部插件" & assemblyFile & "时出错", ex)
         End Try
-
-
     End Function
 
 End Class

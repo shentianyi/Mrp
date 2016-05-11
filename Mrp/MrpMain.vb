@@ -69,13 +69,15 @@ Public Class MrpMain
 
     Private Sub DownloadBom()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
-        Dim boms As Dictionary(Of String, String) = New Dictionary(Of String, String)
+        Dim parts As List(Of String) = New List(Of String)
 
-        ' Dim netMps As parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
+        parts = (From mrpPart In db.Exe_NetMps Select mrpPart.assemblyPartId Distinct).ToList
+
+
 
         Dim data As ProcessData = New ProcessData
         data.Data.Add("db", dbconn)
-        data.Data.Add("partsBomVersion", boms)
+        data.Data.Add("parts", parts)
         excuteAssembly("BOM", data)
     End Sub
 

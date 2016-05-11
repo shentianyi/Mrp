@@ -15,10 +15,10 @@ Imports Mrp
 
     <TestMethod> Public Sub TestDb()
         Dim context As MrpDataDataContext = New MrpDataDataContext
-        Dim a As Object = (From db In context.Exe_NetMps Select db.assemblyPartId, db.bomId)
+        Dim a As IEnumerable(Of Object) = (From db In context.Exe_NetMps Select db.assemblyPartId, db.bomId)
         For Each b As Object In a
-            Dim e As String = b.bomId
-            Dim f As String = b.assemblyPartId
+            Dim e As String = b("bomId")
+            Dim f As String = b("assemblyPartId")
         Next
         Assert.IsNotNull(a)
     End Sub
