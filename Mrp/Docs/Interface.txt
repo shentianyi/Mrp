@@ -1,0 +1,13 @@
+﻿Plugin Interface
+
+Plugin Type: INV
+Plugin Job: Get inventory and insert to the table
+Plugin Table: db.Data_Inventory
+Plugin Parameter: KskPlugInSharedObject.ProcessData 
+				 ProcessData["db"]: String, connection string of the parent system
+				 ProcessData["parts"]:List(of String): part id to get the inventory
+
+Action: Fill the db.Data_Inventory Table
+Return: KskPlugInSharedObject.ProcessResult
+		ProcessResult.ResultCode: 0 - failed 1-successful
+		ProcessResult.Errors - fill the error if resultCode = 0

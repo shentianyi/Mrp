@@ -1,0 +1,10 @@
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\bin\Debug\UnitTestProject1.xml
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.vbprojResolveAssemblyReference.cache
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.Resources.resources
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.vbproj.GenerateResource.Cache
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.xml
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\Mrp\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

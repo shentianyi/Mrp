@@ -1,0 +1,6 @@
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\bin\Debug\OdooWebSvc.dll
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\bin\Debug\OdooWebSvc.pdb
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\bin\Debug\CookComputing.XmlRpcV2.dll
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.csprojResolveAssemblyReference.cache
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.dll
+c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.pdb

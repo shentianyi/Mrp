@@ -1,0 +1,8 @@
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
+C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb

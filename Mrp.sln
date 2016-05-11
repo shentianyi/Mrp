@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Mrp", "Mrp\Mrp.vbproj", "{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestXmlRpc", "TestXmlRpc\TestXmlRpc.vbproj", "{3FDB3665-599D-4F4F-9A32-55C9F1E6CF8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdooWebSvc", "OdooWebSvc\OdooWebSvc.csproj", "{6304E70C-C8C8-4590-BAF9-1F86E38A15F8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.vbproj", "{53ABEF48-16B4-491E-8D89-30BEC88179DA}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KskPlugInSharedObject", "KskPlugInSharedObject\KskPlugInSharedObject.vbproj", "{C78BE146-090F-44C7-B3BF-E0A328335422}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDB3665-599D-4F4F-9A32-55C9F1E6CF8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDB3665-599D-4F4F-9A32-55C9F1E6CF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDB3665-599D-4F4F-9A32-55C9F1E6CF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDB3665-599D-4F4F-9A32-55C9F1E6CF8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6304E70C-C8C8-4590-BAF9-1F86E38A15F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6304E70C-C8C8-4590-BAF9-1F86E38A15F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6304E70C-C8C8-4590-BAF9-1F86E38A15F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6304E70C-C8C8-4590-BAF9-1F86E38A15F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53ABEF48-16B4-491E-8D89-30BEC88179DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ABEF48-16B4-491E-8D89-30BEC88179DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ABEF48-16B4-491E-8D89-30BEC88179DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ABEF48-16B4-491E-8D89-30BEC88179DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78BE146-090F-44C7-B3BF-E0A328335422}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78BE146-090F-44C7-B3BF-E0A328335422}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78BE146-090F-44C7-B3BF-E0A328335422}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78BE146-090F-44C7-B3BF-E0A328335422}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
