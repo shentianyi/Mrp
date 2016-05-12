@@ -8,10 +8,10 @@ namespace OdooWebSvc
 {
     public interface IOdooCommon : IXmlRpcProxy
     {
-        [XmlRpcMethod("authenticate")]
-        int authenticate(string database, string username, string password,Array dummy);
-
         [XmlRpcMethod("version")]
         XmlRpcStruct version();
+
+        [XmlRpcMethod("authenticate")]
+        int authenticate(string database, string username, string password,Array dummy);
     }
 }
