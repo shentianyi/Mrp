@@ -10,3 +10,15 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll.config
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\RestSharp.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\MrpPluginData.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\MrpPluginData.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll.config
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\WMSPlugIn.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\MrpPluginData.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\RestSharp.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\KskPlugInSharedObject.xml
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\bin\Debug\MrpPluginData.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.csprojResolveAssemblyReference.cache
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\WMSPlugIn\obj\Debug\WMSPlugIn.pdb

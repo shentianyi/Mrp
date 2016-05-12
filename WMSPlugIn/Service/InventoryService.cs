@@ -20,23 +20,25 @@ namespace WMSPlugIn.Service
             
         }
 
-        public ProcessResult GetAndCreatePartsInventory(List<string> PartNrs)
+        /// <summary>
+        /// Get Part Inventory from WMS & Insert into Mrp DB
+        /// </summary>
+        /// <param name="partNrs">part nr list</param>
+        /// <returns>ResultCode 1 stands for success, 0 for fail</returns>
+        public ProcessResult GetAndCreatePartsInventory(List<string> partNrs)
         {
-            ProcessResult result = new ProcessResult() { ResultCode = 0, Msgs = new List<string>()};
-            try {
+            ProcessResult result = new ProcessResult() { ResultCode = 0, Msgs = new List<string>() };
+            try
+            {
                 using (IUnitOfWork unit = this.DbContext)
                 {
-                    if (PartNrs != null && PartNrs.Count > 0)
+                    if (partNrs != null && partNrs.Count > 0)
                     {
                         List<Data_Inventory> inventories = new List<Data_Inventory>();
                         IDataInventoryRep rep = new DataInventoryRep(unit);
-                        var wmsRestClient = new WmsRestClient(ServiceBase.Setting["wms_host"]);
-                        var req = wmsRestClient.GetRequest(ServiceBase.Setting["wms_inventory_api"]);
-                        req.AddParameter("part_nrs", string.Join(";",PartNrs.ToArray()));
-                        var res = wmsRestClient.Execute(req);
-                        List<PartStock> stocks = JsonUtil.parse<List<PartStock>>(res.Content);
 
-                        foreach (var stock in stocks)
+
+                        foreach (var stock in this.GetPartsInventory(partNrs))
                         {
                             inventories.Add(new Data_Inventory()
                             {
@@ -51,17 +53,30 @@ namespace WMSPlugIn.Service
                         rep.Insert(inventories);
                         unit.Submit();
                         result.ResultCode = 1;
-                        
+                        result.ReturnedValues.Add("inventoris", inventories);
                     }
-                    else {
+                    else
+                    {
                         result.Msgs.Add("Part Nr List is empty");
                     }
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 result.ResultCode = 0;
                 result.Msgs.Add(e.Message);
             }
             return result;
+        }
+
+        public List<PartStock> GetPartsInventory(List<string> partNrs)
+        {
+            var wmsRestClient = new WmsRestClient(PlugSetting.Setting["wms_host"]);
+            var req = wmsRestClient.GetRequest(PlugSetting.Setting["wms_inventory_api"]);
+            req.AddParameter("part_nrs", string.Join(";", partNrs.ToArray()));
+            var res = wmsRestClient.Execute(req);
+            List<PartStock> stocks = JsonUtil.parse<List<PartStock>>(res.Content);
+            return stocks;
         }
     }
 }

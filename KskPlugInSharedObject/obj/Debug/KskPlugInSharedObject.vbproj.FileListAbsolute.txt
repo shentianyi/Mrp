@@ -1,45 +1,8 @@
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
-C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
-=======
-=======
->>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
-D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
-D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
-D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
-D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
-<<<<<<< HEAD
->>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
-=======
-=======
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
->>>>>>> 6b87daf9175cd86188fd70ae2219e8af707a81af
->>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb

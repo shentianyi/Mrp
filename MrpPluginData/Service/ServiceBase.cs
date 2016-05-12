@@ -11,12 +11,7 @@ namespace MrpPluginData.Service
 {
     public class ServiceBase
     {
-        private static Dictionary<string,string> setting;
-        public static Dictionary<string, string> Setting
-        {
-            get {return setting; }
-            set { setting = value; }
-        }
+       
 
         private string dbConnectString;
         private MrpDataClassesDataContext dbContext;
@@ -36,10 +31,7 @@ namespace MrpPluginData.Service
         public ServiceBase(string dbConnectString)
         {
             this.dbConnectString = dbConnectString;
-            if (setting == null)
-            {
-                setting = GetSetting();
-            }
+            PlugSetting.InitSetting(GetSetting());
         }
 
         public Dictionary<string,string> GetSetting()

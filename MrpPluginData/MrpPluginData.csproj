@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MrpDataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="PlugSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

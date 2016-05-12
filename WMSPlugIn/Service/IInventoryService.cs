@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WMSPlugIn.Model;
 
 namespace WMSPlugIn.Service
 {
     public interface IInventoryService
     {
-        ProcessResult GetAndCreatePartsInventory(List<string> PartNr);
+        List<PartStock> GetPartsInventory(List<string> partNrs);
+        ProcessResult GetAndCreatePartsInventory(List<string> partNrs);
     }
 }

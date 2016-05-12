@@ -12,11 +12,11 @@ namespace OdooWebSvc.Tests
     {
         [TestMethod()]
         public void TTest()
-        {
-            string s = "1";
+        { 
             Class1 c = new Class1();
             c.T();
-            Assert.Fail();
+            string s = "1";
         }
+   
     }
 }
