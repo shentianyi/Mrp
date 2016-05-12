@@ -13,6 +13,7 @@ Imports Mrp
 
     End Sub
 
+<<<<<<< HEAD
     <TestMethod> Public Sub TestDb()
         Dim context As MrpDataDataContext = New MrpDataDataContext
         Dim a As IEnumerable(Of Object) = (From db In context.Exe_NetMps Select db.assemblyPartId, db.bomId)
@@ -22,5 +23,8 @@ Imports Mrp
         Next
         Assert.IsNotNull(a)
     End Sub
+=======
+
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
 
 End Class

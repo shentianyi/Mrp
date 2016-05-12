@@ -42,7 +42,7 @@ ipch/
 *.opensdf
 *.sdf
 .vs/
-.vs/*
+
 # Visual Studio profiler
 
 

@@ -8,6 +8,13 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="217,246,0,0" VerticalAlignment="Top" Width="75"/>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="195" Margin="34,30,0,0" VerticalAlignment="Top" Width="456">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
 
     </Grid>
 </Window>

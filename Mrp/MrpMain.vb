@@ -1,6 +1,10 @@
 ﻿Imports KskPlugInSharedObject
 Imports System.IO.Path
 Imports System.IO
+<<<<<<< HEAD
+=======
+
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
 
 Public Class MrpMain
     '1 get grassMPS source
@@ -45,10 +49,14 @@ Public Class MrpMain
         End Try
     End Sub
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
     Private Sub DownloadOrderedPart()
+=======
+    Public Sub DownloadOrderedPart()
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim parts As List(Of String) = New List(Of String)
         parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
@@ -105,7 +113,11 @@ Public Class MrpMain
         excuteAssembly("INV", data)
     End Sub
 
+<<<<<<< HEAD
     Private Sub excuteAssembly(type As String, data As ProcessData)
+=======
+    Public Sub excuteAssembly(type As String, data As ProcessData)
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
         If exes.Count = 0 Then
@@ -118,6 +130,7 @@ Public Class MrpMain
                 End If
             Next
         End If
+<<<<<<< HEAD
     End Sub
 
     Private Sub GenerateGrossMps()
@@ -193,11 +206,17 @@ Public Class MrpMain
         '        End If
         '    Next
         'End If
+=======
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
 
     End Sub
 
     Public Sub GenerateGrossMps()
+<<<<<<< HEAD
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         DownloadProductionPlan()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossMpses As List(Of Exe_GrossMp) = New List(Of Exe_GrossMp)
@@ -214,10 +233,15 @@ Public Class MrpMain
     End Sub
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     Private Sub GenerateNetMps()
 =======
     Public Sub GenerateNetMps()
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+
+    Public Sub GenerateNetMps()
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         DownloadInventory("MPS")
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMps
@@ -259,10 +283,15 @@ Public Class MrpMain
     End Sub
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     Private Sub GenerateGrossMrp()
 =======
     Public Sub GenerateGrossMrp()
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+
+    Public Sub GenerateGrossMrp()
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         DownloadBom()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim rowMrps As List(Of Exe_GrossMrp) = New List(Of Exe_GrossMrp)
@@ -299,6 +328,7 @@ Public Class MrpMain
         DownloadOrderedPart()
         DownloadInventory("MRP")
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMrps
@@ -310,6 +340,8 @@ Public Class MrpMain
         invs.Sort(New Comparison(Of Data_Inventory)(Function(c, e) c.expireDate < e.expireDate))
 
 =======
+=======
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
 
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossesId As List(Of String) = (From gro In db.Exe_GrossMrps
@@ -320,7 +352,10 @@ Public Class MrpMain
         Dim nets As List(Of Exe_NetMrp) = New List(Of Exe_NetMrp)
         invs.Sort(New Comparison(Of Data_Inventory)(Function(c, e) c.expireDate < e.expireDate))
 
+<<<<<<< HEAD
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
         For Each gross As Exe_GrossMrp In (From gro2 In db.Exe_GrossMrps Select gro2 Order By gro2.requiredDate Ascending)
             invs.RemoveAll(Function(c) c Is Nothing)
             For Each existInv In invs
@@ -341,10 +376,15 @@ Public Class MrpMain
                 For Each existOrder In ordered
                     If String.Compare(existOrder.partId, gross.partId, True) = 0 Then
 <<<<<<< HEAD
+<<<<<<< HEAD
                         If existOrder.arriveTime > gross.requiredDate Then
 =======
                         If existOrder.arriveTime <= gross.requiredDate Then
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+
+                        If existOrder.arriveTime <= gross.requiredDate Then
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
                             If existOrder.quantity >= gross.quantity Then
                                 existOrder.quantity = existOrder.quantity - gross.quantity
                                 gross = Nothing
@@ -366,6 +406,16 @@ Public Class MrpMain
             End If
         Next
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+        db.Exe_NetMrps.InsertAllOnSubmit(nets)
+        db.SubmitChanges()
+        db.Dispose()
+        invs = Nothing
+        ordered = Nothing
+        nets = Nothing
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
     End Sub
 
     Private Sub GenerateResult()
@@ -392,6 +442,7 @@ Public Class MrpMain
         db.Dispose()
     End Sub
 
+<<<<<<< HEAD
     Private Sub SendResult()
 =======
         db.Exe_NetMrps.InsertAllOnSubmit(nets)
@@ -428,6 +479,10 @@ Public Class MrpMain
 
     Public Sub SendResult()
 >>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+=======
+    Public Sub SendResult()
+
+>>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
 
     End Sub
 End Class

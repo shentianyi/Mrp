@@ -4,16 +4,28 @@
 winexe
 VB
 .vb
+<<<<<<< HEAD
+D:\dev\Mrp\TestXmlRpc\obj\Debug\
+=======
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\obj\Debug\
+>>>>>>> 6b87daf9175cd86188fd70ae2219e8af707a81af
 TestXmlRpc
 none
 false
 
+<<<<<<< HEAD
+D:\dev\Mrp\TestXmlRpc\Application.xaml
+11151548125
+
+6-722535863
+121409386534
+=======
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\Application.xaml
 11151548125
 
 6-722535863
 12-1536591524
+>>>>>>> 6b87daf9175cd86188fd70ae2219e8af707a81af
 MainWindow.xaml;
 
 False
