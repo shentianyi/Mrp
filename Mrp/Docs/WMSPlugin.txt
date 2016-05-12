@@ -1,0 +1,37 @@
+﻿1. 在数据库 Sys_Plugin 表中插入以下数据
+  insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('WMS Plugin','INV','WMSPlugIn.dll','Inventory','CreateInventory',1)
+2. 创建Plugin_WMS_Setting表
+USE [Mrp]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Plugin_WMS_Setting](
+	[int] [int] IDENTITY(1,1) NOT NULL,
+	[host] [varchar](50) NOT NULL,
+	[inventoryApi] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Plugin_WMS_Setting] PRIMARY KEY CLUSTERED 
+(
+	[int] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+3. 在数据库 Plugin_WMS_Setting 表中插入以下数据,其中host是wms的服务器地址
+  insert into [Mrp].[dbo].[Plugin_WMS_Setting](host,inventoryApi)
+  values(N'http://192.168.1.12:3000',N'/api/v4/storage/parts_stock')
+
+4. 引用RestSharp.dll和WMSPlugIn.dll

@@ -2,6 +2,7 @@
 Imports System.IO.Path
 Imports System.IO
 
+
 Public Class MrpMain
     '1 get grassMPS source
     '2 get balance source
@@ -44,8 +45,6 @@ Public Class MrpMain
             Throw New Exception("重建工作数据库时出错", ex)
         End Try
     End Sub
-
-
 
     Public Sub DownloadOrderedPart()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
@@ -121,6 +120,7 @@ Public Class MrpMain
     End Sub
 
     Public Sub GenerateGrossMps()
+
         DownloadProductionPlan()
         Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
         Dim grossMpses As List(Of Exe_GrossMp) = New List(Of Exe_GrossMp)
@@ -135,6 +135,7 @@ Public Class MrpMain
         db.Dispose()
         grossMpses = Nothing
     End Sub
+
 
     Public Sub GenerateNetMps()
         DownloadInventory("MPS")
@@ -176,6 +177,7 @@ Public Class MrpMain
         nets = Nothing
         db.Dispose()
     End Sub
+
 
     Public Sub GenerateGrossMrp()
         DownloadBom()
@@ -242,6 +244,7 @@ Public Class MrpMain
             If gross IsNot Nothing Then
                 For Each existOrder In ordered
                     If String.Compare(existOrder.partId, gross.partId, True) = 0 Then
+
                         If existOrder.arriveTime <= gross.requiredDate Then
                             If existOrder.quantity >= gross.quantity Then
                                 existOrder.quantity = existOrder.quantity - gross.quantity
@@ -263,6 +266,7 @@ Public Class MrpMain
                 nets.Add(net)
             End If
         Next
+
         db.Exe_NetMrps.InsertAllOnSubmit(nets)
         db.SubmitChanges()
         db.Dispose()
@@ -296,6 +300,7 @@ Public Class MrpMain
     End Sub
 
     Public Sub SendResult()
+
 
     End Sub
 End Class
