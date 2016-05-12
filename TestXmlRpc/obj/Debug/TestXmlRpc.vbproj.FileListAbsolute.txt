@@ -1,41 +1,3 @@
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.exe
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.pdb
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.xml
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\CookComputing.XmlRpcV2.dll
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.dll
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.pdb
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbprojResolveAssemblyReference.cache
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\MainWindow.g.vb
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\Application.g.vb
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.cache
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.lref
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\MainWindow.baml
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.g.resources
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.Resources.resources
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbproj.GenerateResource.Cache
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.exe
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.xml
-c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.pdb
-<<<<<<< HEAD
-D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.exe
-D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.pdb
-D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.xml
-D:\dev\Mrp\TestXmlRpc\bin\Debug\CookComputing.XmlRpcV2.dll
-D:\dev\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.dll
-D:\dev\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.pdb
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbprojResolveAssemblyReference.cache
-D:\dev\Mrp\TestXmlRpc\obj\Debug\MainWindow.g.vb
-D:\dev\Mrp\TestXmlRpc\obj\Debug\Application.g.vb
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.cache
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.lref
-D:\dev\Mrp\TestXmlRpc\obj\Debug\MainWindow.baml
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.g.resources
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.Resources.resources
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbproj.GenerateResource.Cache
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.exe
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.xml
-D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.pdb
-=======
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.exe
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.pdb
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.xml
@@ -54,4 +16,3 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbproj.Ge
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.exe
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.xml
 C:\Users\Wangsong\Documents\GitHub\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.pdb
->>>>>>> 6b87daf9175cd86188fd70ae2219e8af707a81af

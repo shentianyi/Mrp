@@ -1,20 +1,5 @@
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\bin\Debug\Mrp.dll
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\bin\Debug\Mrp.pdb
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\bin\Debug\Mrp.xml
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\bin\Debug\CookComputing.XmlRpcV2.dll
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.Resources.resources
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.dll
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.xml
-c:\users\tianyi\documents\visual studio 2015\Projects\Mrp\Mrp\obj\Debug\Mrp.pdb
-<<<<<<< HEAD
-<<<<<<< HEAD
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbprojResolveAssemblyReference.cache
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.Resources.resources
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\dbscripts\clearData.txt
+C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\dbscripts\create.txt
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll.config
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.pdb
@@ -23,42 +8,9 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\CookComputing.XmlRpcV2.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.pdb
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.xml
-=======
-=======
->>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
-D:\dev\Mrp\Mrp\bin\Debug\Mrp.dll.config
-D:\dev\Mrp\Mrp\bin\Debug\Mrp.dll
-D:\dev\Mrp\Mrp\bin\Debug\Mrp.pdb
-D:\dev\Mrp\Mrp\bin\Debug\Mrp.xml
-D:\dev\Mrp\Mrp\bin\Debug\CookComputing.XmlRpcV2.dll
-D:\dev\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.dll
-D:\dev\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.pdb
-D:\dev\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.xml
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.vbprojResolveAssemblyReference.cache
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.Resources.resources
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.dll
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.xml
-D:\dev\Mrp\Mrp\obj\Debug\Mrp.pdb
-D:\dev\Mrp\Mrp\bin\Debug\dbscripts\clearData.txt
-D:\dev\Mrp\Mrp\bin\Debug\dbscripts\create.txt
-<<<<<<< HEAD
->>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
-=======
-=======
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbprojResolveAssemblyReference.cache
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.Resources.resources
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.vbproj.GenerateResource.Cache
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.xml
 C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\obj\Debug\Mrp.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll.config
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\Mrp.xml
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\CookComputing.XmlRpcV2.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.dll
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\Mrp\bin\Debug\KskPlugInSharedObject.xml
->>>>>>> 6b87daf9175cd86188fd70ae2219e8af707a81af
->>>>>>> 88b2276fcdec0521862dcc60fc1a6909bd445028
