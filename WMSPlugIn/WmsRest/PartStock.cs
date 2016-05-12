@@ -17,10 +17,10 @@ namespace WMSPlugIn.WmsRest
         public string Uom { get; set; }
 
         [DataMember]
-        public DateTime FIFO { get; set; }
+        public string FIFO { get; set; }
 
         [DataMember]
-        public DateTime ExpireDate { get; set; }
+        public string ExpireDate { get; set; }
 
         [DataMember]
         public float Qty { get; set; }

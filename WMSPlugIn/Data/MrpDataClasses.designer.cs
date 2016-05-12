@@ -494,7 +494,7 @@ namespace WMSPlugIn.Data
 		
 		private string _host;
 		
-		private string _inventoyApi;
+		private string _inventoryApi;
 		
     #region 可扩展性方法定义
     partial void OnLoaded();
@@ -504,8 +504,8 @@ namespace WMSPlugIn.Data
     partial void OnidChanged();
     partial void OnhostChanging(string value);
     partial void OnhostChanged();
-    partial void OninventoyApiChanging(string value);
-    partial void OninventoyApiChanged();
+    partial void OninventoryApiChanging(string value);
+    partial void OninventoryApiChanged();
     #endregion
 		
 		public Plugin_WMS_Setting()
@@ -553,22 +553,22 @@ namespace WMSPlugIn.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inventoyApi", DbType="VarChar(50)")]
-		public string inventoyApi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inventoryApi", DbType="VarChar(50)")]
+		public string inventoryApi
 		{
 			get
 			{
-				return this._inventoyApi;
+				return this._inventoryApi;
 			}
 			set
 			{
-				if ((this._inventoyApi != value))
+				if ((this._inventoryApi != value))
 				{
-					this.OninventoyApiChanging(value);
+					this.OninventoryApiChanging(value);
 					this.SendPropertyChanging();
-					this._inventoyApi = value;
-					this.SendPropertyChanged("inventoyApi");
-					this.OninventoyApiChanged();
+					this._inventoryApi = value;
+					this.SendPropertyChanged("inventoryApi");
+					this.OninventoryApiChanged();
 				}
 			}
 		}

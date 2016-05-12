@@ -25,7 +25,7 @@
     <Type Name="Plugin_WMS_Setting">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="host" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="inventoyApi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="inventoryApi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

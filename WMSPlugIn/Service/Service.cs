@@ -25,10 +25,10 @@ namespace WMSPlugIn.Service
         {
             get
             {
-                if (dbContext == null)
-                {
+                //if (dbContext == null)
+                //{
                     dbContext = new MrpDataClassesDataContext(this.DbConnectString);
-                }
+                //}
                 return dbContext;
             }
         }
@@ -44,7 +44,7 @@ namespace WMSPlugIn.Service
 
         public Plugin_WMS_Setting GetSetting()
         {
-            using (IUnitOfWork unit = this.dbContext)
+            using (IUnitOfWork unit = this.DbContext)
             {
                 ISettingRep rep = new SettingRep(unit);
                 Plugin_WMS_Setting setting = rep.Load();
