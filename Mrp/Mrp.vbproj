@@ -121,8 +121,23 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dbscripts\clearData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbscripts\create.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Docs\Interface.txt" />
     <Content Include="Docs\WMSPlugin.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">
+      <Project>{c78be146-090f-44c7-b3bf-e0a328335422}</Project>
+      <Name>KskPlugInSharedObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">

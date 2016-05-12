@@ -1,0 +1,439 @@
+﻿USE [master]
+GO
+/****** Object:  Database [Mrp]    Script Date: 05/11/2016 15:12:53 ******/
+CREATE DATABASE [Mrp] ON  PRIMARY 
+( NAME = N'Mrp', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\Mrp.mdf' , SIZE = 2304KB , MAXSIZE = UNLIMITED, FILEGROWTH = 1024KB )
+ LOG ON 
+( NAME = N'Mrp_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\Mrp_log.LDF' , SIZE = 576KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+GO
+ALTER DATABASE [Mrp] SET COMPATIBILITY_LEVEL = 100
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [Mrp].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [Mrp] SET ANSI_NULL_DEFAULT OFF
+GO
+ALTER DATABASE [Mrp] SET ANSI_NULLS OFF
+GO
+ALTER DATABASE [Mrp] SET ANSI_PADDING OFF
+GO
+ALTER DATABASE [Mrp] SET ANSI_WARNINGS OFF
+GO
+ALTER DATABASE [Mrp] SET ARITHABORT OFF
+GO
+ALTER DATABASE [Mrp] SET AUTO_CLOSE OFF
+GO
+ALTER DATABASE [Mrp] SET AUTO_CREATE_STATISTICS ON
+GO
+ALTER DATABASE [Mrp] SET AUTO_SHRINK OFF
+GO
+ALTER DATABASE [Mrp] SET AUTO_UPDATE_STATISTICS ON
+GO
+ALTER DATABASE [Mrp] SET CURSOR_CLOSE_ON_COMMIT OFF
+GO
+ALTER DATABASE [Mrp] SET CURSOR_DEFAULT  GLOBAL
+GO
+ALTER DATABASE [Mrp] SET CONCAT_NULL_YIELDS_NULL OFF
+GO
+ALTER DATABASE [Mrp] SET NUMERIC_ROUNDABORT OFF
+GO
+ALTER DATABASE [Mrp] SET QUOTED_IDENTIFIER OFF
+GO
+ALTER DATABASE [Mrp] SET RECURSIVE_TRIGGERS OFF
+GO
+ALTER DATABASE [Mrp] SET  ENABLE_BROKER
+GO
+ALTER DATABASE [Mrp] SET AUTO_UPDATE_STATISTICS_ASYNC OFF
+GO
+ALTER DATABASE [Mrp] SET DATE_CORRELATION_OPTIMIZATION OFF
+GO
+ALTER DATABASE [Mrp] SET TRUSTWORTHY OFF
+GO
+ALTER DATABASE [Mrp] SET ALLOW_SNAPSHOT_ISOLATION OFF
+GO
+ALTER DATABASE [Mrp] SET PARAMETERIZATION SIMPLE
+GO
+ALTER DATABASE [Mrp] SET READ_COMMITTED_SNAPSHOT OFF
+GO
+ALTER DATABASE [Mrp] SET HONOR_BROKER_PRIORITY OFF
+GO
+ALTER DATABASE [Mrp] SET  READ_WRITE
+GO
+ALTER DATABASE [Mrp] SET RECOVERY FULL
+GO
+ALTER DATABASE [Mrp] SET  MULTI_USER
+GO
+ALTER DATABASE [Mrp] SET PAGE_VERIFY CHECKSUM
+GO
+ALTER DATABASE [Mrp] SET DB_CHAINING OFF
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'Mrp', N'ON'
+GO
+USE [Mrp]
+GO
+/****** Object:  Table [dbo].[Sys_Plugin]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Sys_Plugin](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[name] [varchar](100) NOT NULL,
+	[pluginType] [varchar](50) NOT NULL,
+	[assemblyFile] [text] NOT NULL,
+	[type] [varchar](100) NOT NULL,
+	[method] [varchar](100) NOT NULL,
+	[seq] [int] NULL,
+ CONSTRAINT [PK_dbo.Sys_Plugin] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Exe_NetMrp]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Exe_NetMrp](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[partId] [varchar](200) NOT NULL,
+	[requiredDate] [datetime] NOT NULL,
+	[orderDate] [datetime] NOT NULL,
+	[quantity] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Exe_NetMrp] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Exe_NetMps]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Exe_NetMps](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[assemblyPartId] [varchar](50) NOT NULL,
+	[requiredTime] [datetime] NOT NULL,
+	[source] [text] NOT NULL,
+	[bomId] [varchar](50) NOT NULL,
+	[mrpRound] [varchar](50) NOT NULL,
+	[quantity] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Exe_NetMps] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Exe_MrpOrder]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Exe_MrpOrder](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[partId] [varchar](200) NOT NULL,
+	[vendorId] [varchar](200) NOT NULL,
+	[quantity] [float] NOT NULL,
+	[requiredDate] [datetime] NOT NULL,
+	[orderDate] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.Exe_MrpOrder] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Exe_GrossMrp]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Exe_GrossMrp](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[partId] [varchar](200) NOT NULL,
+	[sourcePart] [varchar](200) NOT NULL,
+	[sourceDoc] [varchar](200) NOT NULL,
+	[requiredDate] [datetime] NOT NULL,
+	[quantity] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Exe_GrossMrp] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Exe_GrossMps]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Exe_GrossMps](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[assemblyPartId] [varchar](50) NOT NULL,
+	[requiredTime] [datetime] NOT NULL,
+	[source] [text] NOT NULL,
+	[bomId] [varchar](50) NOT NULL,
+	[mrpRound] [varchar](50) NOT NULL,
+	[quantity] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Exe_GrossMps] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Data_ProductionPlan]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Data_ProductionPlan](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[planId] [varchar](50) NOT NULL,
+	[assemblyPartId] [varchar](50) NOT NULL,
+	[time] [datetime] NOT NULL,
+	[quantity] [float] NOT NULL,
+	[bomId] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_dbo.Data_ProductionPlan] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Data_PartVendorConfig]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Data_PartVendorConfig](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[partId] [varchar](50) NOT NULL,
+	[vendorId] [varchar](50) NOT NULL,
+	[leadTime] [int] NOT NULL,
+	[moq] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Data_PartVendorConfig] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Data_OrderedPart]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Data_OrderedPart](
+	[id] [int] NOT NULL,
+	[partId] [varchar](200) NOT NULL,
+	[sourceId] [varchar](200) NOT NULL,
+	[quantity] [float] NOT NULL,
+	[arriveTime] [datetime] NOT NULL,
+ CONSTRAINT [PK_dbo.Data_OrderedPart] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Data_Inventory]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Data_Inventory](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[partId] [varchar](50) NOT NULL,
+	[uom] [varchar](50) NOT NULL,
+	[FIFO] [datetime] NOT NULL,
+	[expireDate] [datetime] NOT NULL,
+	[quantity] [float] NOT NULL,
+ CONSTRAINT [PK_dbo.Data_Inventory] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Data_Bom]    Script Date: 05/11/2016 15:12:56 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[Data_Bom](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[bomId] [varchar](50) NOT NULL,
+	[assemblyPartId] [varchar](50) NOT NULL,
+	[materialPartId] [varchar](50) NOT NULL,
+	[quantity] [float] NOT NULL,
+	[uom] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_dbo.Data_Bom] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  View [dbo].[View_SumOfNetMrp]    Script Date: 05/11/2016 15:12:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE VIEW [dbo].[View_SumOfNetMrp]
+AS
+SELECT     partId, requiredDate, SUM(quantity) AS nrofquantity
+FROM         dbo.Exe_NetMrp
+GROUP BY partId, requiredDate
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane1', @value=N'[0E232FF0-B466-11cf-A24F-00AA00A3EFFF, 1.00]
+Begin DesignProperties = 
+   Begin PaneConfigurations = 
+      Begin PaneConfiguration = 0
+         NumPanes = 4
+         Configuration = "(H (1[40] 4[20] 2[20] 3) )"
+      End
+      Begin PaneConfiguration = 1
+         NumPanes = 3
+         Configuration = "(H (1 [50] 4 [25] 3))"
+      End
+      Begin PaneConfiguration = 2
+         NumPanes = 3
+         Configuration = "(H (1 [50] 2 [25] 3))"
+      End
+      Begin PaneConfiguration = 3
+         NumPanes = 3
+         Configuration = "(H (4 [30] 2 [40] 3))"
+      End
+      Begin PaneConfiguration = 4
+         NumPanes = 2
+         Configuration = "(H (1 [56] 3))"
+      End
+      Begin PaneConfiguration = 5
+         NumPanes = 2
+         Configuration = "(H (2 [66] 3))"
+      End
+      Begin PaneConfiguration = 6
+         NumPanes = 2
+         Configuration = "(H (4 [50] 3))"
+      End
+      Begin PaneConfiguration = 7
+         NumPanes = 1
+         Configuration = "(V (3))"
+      End
+      Begin PaneConfiguration = 8
+         NumPanes = 3
+         Configuration = "(H (1[56] 4[18] 2) )"
+      End
+      Begin PaneConfiguration = 9
+         NumPanes = 2
+         Configuration = "(H (1 [75] 4))"
+      End
+      Begin PaneConfiguration = 10
+         NumPanes = 2
+         Configuration = "(H (1[66] 2) )"
+      End
+      Begin PaneConfiguration = 11
+         NumPanes = 2
+         Configuration = "(H (4 [60] 2))"
+      End
+      Begin PaneConfiguration = 12
+         NumPanes = 1
+         Configuration = "(H (1) )"
+      End
+      Begin PaneConfiguration = 13
+         NumPanes = 1
+         Configuration = "(V (4))"
+      End
+      Begin PaneConfiguration = 14
+         NumPanes = 1
+         Configuration = "(V (2))"
+      End
+      ActivePaneConfig = 0
+   End
+   Begin DiagramPane = 
+      Begin Origin = 
+         Top = 0
+         Left = 0
+      End
+      Begin Tables = 
+         Begin Table = "Exe_NetMrp"
+            Begin Extent = 
+               Top = 6
+               Left = 38
+               Bottom = 114
+               Right = 181
+            End
+            DisplayFlags = 280
+            TopColumn = 1
+         End
+      End
+   End
+   Begin SQLPane = 
+   End
+   Begin DataPane = 
+      Begin ParameterDefaults = ""
+      End
+   End
+   Begin CriteriaPane = 
+      Begin ColumnWidths = 12
+         Column = 1440
+         Alias = 900
+         Table = 1170
+         Output = 720
+         Append = 1400
+         NewValue = 1170
+         SortType = 1350
+         SortOrder = 1410
+         GroupBy = 1350
+         Filter = 1350
+         Or = 1350
+         Or = 1350
+         Or = 1350
+      End
+   End
+End
+' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'View_SumOfNetMrp'
+GO
+EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPaneCount', @value=1 , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'View_SumOfNetMrp'
+GO

@@ -1,0 +1,116 @@
+﻿Merge branch 'master' of github.com:shentianyi/Mrp
+
+Conflicts:
+	.vs/Mrp/v14/.suo
+	KskPlugInSharedObject/bin/Debug/KskPlugInSharedObject.dll
+	KskPlugInSharedObject/bin/Debug/KskPlugInSharedObject.pdb
+	KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.dll
+	KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.pdb
+	KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.vbproj.FileListAbsolute.txt
+	Mrp.sln
+	Mrp/MrpMain.vb
+	Mrp/bin/Debug/Mrp.dll
+	Mrp/bin/Debug/Mrp.pdb
+	Mrp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+	Mrp/obj/Debug/Mrp.dll
+	Mrp/obj/Debug/Mrp.pdb
+	Mrp/obj/Debug/Mrp.vbproj.FileListAbsolute.txt
+	Mrp/obj/Debug/Mrp.vbprojResolveAssemblyReference.cache
+	TestXmlRpc/obj/Debug/TestXmlRpc_MarkupCompile.i.lref
+	UnitTestProject1/UnitTestForPlugIn.vb
+	UnitTestProject1/bin/Debug/UnitTestProject1.dll
+	UnitTestProject1/bin/Debug/UnitTestProject1.pdb
+	UnitTestProject1/obj/Debug/UnitTestProject1.dll
+	UnitTestProject1/obj/Debug/UnitTestProject1.pdb
+	UnitTestProject1/obj/Debug/UnitTestProject1.vbproj.FileListAbsolute.txt
+	UnitTestProject1/obj/Debug/UnitTestProject1.vbprojResolveAssemblyReference.cache
+	WMSPlugIn/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   .vs/Mrp/v14/.suo
+#	modified:   KskPlugInSharedObject/bin/Debug/KskPlugInSharedObject.dll
+#	modified:   KskPlugInSharedObject/bin/Debug/KskPlugInSharedObject.pdb
+#	modified:   KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.dll
+#	modified:   KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.pdb
+#	modified:   KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.vbproj.FileListAbsolute.txt
+#	new file:   KskPlugInSharedObject/obj/Debug/KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
+#	modified:   Mrp.sln
+#	modified:   Mrp/Mrp.vbproj
+#	modified:   Mrp/MrpMain.vb
+#	new file:   Mrp/dbscripts/clearData.txt
+#	new file:   Mrp/dbscripts/create.txt
+#	modified:   Mrp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   Mrp/obj/Debug/Mrp.vbproj.FileListAbsolute.txt
+#	modified:   Mrp/obj/Debug/Mrp.vbprojResolveAssemblyReference.cache
+#	new file:   TestMrp/Application.xaml
+#	new file:   TestMrp/Application.xaml.vb
+#	new file:   TestMrp/MainWindow.xaml
+#	new file:   TestMrp/MainWindow.xaml.vb
+#	new file:   TestMrp/My Project/AssemblyInfo.vb
+#	new file:   TestMrp/My Project/MyExtensions/MyWpfExtension.vb
+#	new file:   TestMrp/My Project/Resources.Designer.vb
+#	new file:   TestMrp/My Project/Resources.resx
+#	new file:   TestMrp/My Project/Settings.Designer.vb
+#	new file:   TestMrp/My Project/Settings.settings
+#	new file:   TestMrp/TestMrp.vbproj
+#	new file:   TestMrp/bin/Debug/KskPlugInSharedObject.dll
+#	new file:   TestMrp/bin/Debug/KskPlugInSharedObject.pdb
+#	new file:   TestMrp/bin/Debug/KskPlugInSharedObject.xml
+#	new file:   TestMrp/bin/Debug/Mrp.dll
+#	new file:   TestMrp/bin/Debug/Mrp.pdb
+#	new file:   TestMrp/bin/Debug/Mrp.xml
+#	new file:   TestMrp/bin/Debug/TestMrp.exe
+#	new file:   TestMrp/bin/Debug/TestMrp.pdb
+#	renamed:    TestXmlRpc/bin/Debug/TestXmlRpc.vshost.exe -> TestMrp/bin/Debug/TestMrp.vshost.exe
+#	renamed:    TestXmlRpc/bin/Debug/TestXmlRpc.vshost.exe.manifest -> TestMrp/bin/Debug/TestMrp.vshost.exe.manifest
+#	new file:   TestMrp/bin/Debug/TestMrp.xml
+#	new file:   TestMrp/bin/Debug/dbscripts/clearData.txt
+#	new file:   TestMrp/bin/Debug/dbscripts/create.txt
+#	new file:   TestMrp/obj/Debug/Application.g.i.vb
+#	new file:   TestMrp/obj/Debug/Application.g.vb
+#	new file:   TestMrp/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	new file:   TestMrp/obj/Debug/MainWindow.g.i.vb
+#	new file:   TestMrp/obj/Debug/MainWindow.g.vb
+#	new file:   TestMrp/obj/Debug/TestMrp.Resources.resources
+#	new file:   TestMrp/obj/Debug/TestMrp.exe
+#	new file:   TestMrp/obj/Debug/TestMrp.g.resources
+#	new file:   TestMrp/obj/Debug/TestMrp.pdb
+#	new file:   TestMrp/obj/Debug/TestMrp.vbproj.FileListAbsolute.txt
+#	new file:   TestMrp/obj/Debug/TestMrp.vbproj.GenerateResource.Cache
+#	new file:   TestMrp/obj/Debug/TestMrp.vbprojResolveAssemblyReference.cache
+#	new file:   TestMrp/obj/Debug/TestMrp.xml
+#	new file:   TestMrp/obj/Debug/TestMrp_MarkupCompile.cache
+#	new file:   TestMrp/obj/Debug/TestMrp_MarkupCompile.i.cache
+#	new file:   TestMrp/obj/Debug/TestMrp_MarkupCompile.lref
+#	modified:   TestXmlRpc/obj/Debug/TestXmlRpc_MarkupCompile.i.cache
+#	modified:   UnitTestProject1/UnitTestForPlugIn.vb
+#	modified:   UnitTestProject1/UnitTestProject1.vbproj
+#	new file:   UnitTestProject1/obj/Debug/UnitTestProject1.dll
+#	new file:   UnitTestProject1/obj/Debug/UnitTestProject1.pdb
+#	new file:   UnitTestProject1/obj/Debug/UnitTestProject1.vbproj.FileListAbsolute.txt
+#	new file:   UnitTestProject1/obj/Debug/UnitTestProject1.vbprojResolveAssemblyReference.cache
+#	deleted:    WMSPlugIn/Service/IStorageService.cs
+#	deleted:    WMSPlugIn/Service/StorageService.cs
+#	modified:   WMSPlugIn/bin/Debug/KskPlugInSharedObject.dll
+#	modified:   WMSPlugIn/bin/Debug/KskPlugInSharedObject.pdb
+#	modified:   WMSPlugIn/bin/Debug/WMSPlugIn.dll
+#	modified:   WMSPlugIn/bin/Debug/WMSPlugIn.pdb
+#	modified:   WMSPlugIn/obj/Debug/WMSPlugIn.csprojResolveAssemblyReference.cache
+#	modified:   WMSPlugIn/obj/Debug/WMSPlugIn.dll
+#	modified:   WMSPlugIn/obj/Debug/WMSPlugIn.pdb
+#
+

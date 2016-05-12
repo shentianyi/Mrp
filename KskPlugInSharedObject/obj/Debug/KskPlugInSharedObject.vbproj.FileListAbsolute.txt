@@ -6,6 +6,7 @@ C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedOb
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
 C:\Users\Tianyi\Documents\Visual Studio 2015\Projects\AutoWork\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+<<<<<<< HEAD
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
@@ -14,3 +15,15 @@ C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugIn
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
 C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+=======
+D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
+D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
+D:\dev\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
+>>>>>>> 41516624c9e1a98ce8073763597fa26854d3d629
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache

@@ -1,0 +1,10 @@
+﻿truncate table Data_Bom;
+truncate table Data_Inventory;
+truncate table Data_OrderedPart;
+truncate table Data_PartVendorConfig;
+truncate table Data_ProductionPlan;
+truncate table Exe_GrossMps;
+truncate table Exe_GrossMrp;
+truncate table Exe_MrpOrder;
+truncate table Exe_NetMps;
+truncate table Exe_NetMrp;
