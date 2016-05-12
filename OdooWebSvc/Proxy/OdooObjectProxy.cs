@@ -16,5 +16,7 @@ namespace OdooWebSvc.Proxy
             this.odooObject = XmlRpcProxyGen.Create<IOdooObject>();
             this.odooObject.Url = Url;
         }
+
+
     }
 }
