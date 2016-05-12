@@ -32,7 +32,7 @@ namespace WMSPlugIn.Service.Tests
                 partNrs.Add("P"+i);
             }
             ProcessResult result= iv.GetAndCreatePartsInventory(partNrs);
-            Assert.Fail();
+            Assert.AreEqual(result.ResultCode, 1);
         }
     }
 }
