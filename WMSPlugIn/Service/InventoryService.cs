@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using KskPlugInSharedObject;
-using WMSPlugIn.Data;
 using WMSPlugIn.WmsRest;
-using WMSPlugIn.Data.Implement;
-using WMSPlugIn.Data.Interface;
+using MrpPluginData;
+using MrpPluginData.Rep.Interface;
+using MrpPluginData.Rep.Implement;
+using MrpPluginData.Service;
+using WMSPlugIn.Model;
 
 namespace WMSPlugIn.Service
 {
-    public class InventoryService :Service, IInventoryService
+    public class InventoryService : ServiceBase, IInventoryService
     {
         public InventoryService() { }
         public InventoryService(string dbConnectString):base(dbConnectString) {
@@ -28,8 +30,8 @@ namespace WMSPlugIn.Service
                     {
                         List<Data_Inventory> inventories = new List<Data_Inventory>();
                         IDataInventoryRep rep = new DataInventoryRep(unit);
-                        var wmsRestClient = new WmsRestClient(Service.WMSSetting.host);
-                        var req = wmsRestClient.GetRequest(Service.WMSSetting.inventoryApi);
+                        var wmsRestClient = new WmsRestClient(ServiceBase.Setting["wms_host"]);
+                        var req = wmsRestClient.GetRequest(ServiceBase.Setting["wms_inventory_api"]);
                         req.AddParameter("part_nrs", string.Join(";",PartNrs.ToArray()));
                         var res = wmsRestClient.Execute(req);
                         List<PartStock> stocks = JsonUtil.parse<List<PartStock>>(res.Content);

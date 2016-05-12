@@ -6,7 +6,6 @@ using System.Net;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
-using WMSPlugIn.Data;
 
 namespace WMSPlugIn.WmsRest
 {

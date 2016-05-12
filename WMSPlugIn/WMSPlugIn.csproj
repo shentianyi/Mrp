@@ -46,27 +46,11 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Implement\BaseRep.cs" />
-    <Compile Include="Data\Implement\DataInventoryRep.cs" />
-    <Compile Include="Data\Implement\SettingRep.cs" />
-    <Compile Include="Data\Interface\IDataInventoryRep.cs" />
-    <Compile Include="Data\Interface\IBaseRep.cs" />
-    <Compile Include="Data\Interface\ISettingRep.cs" />
-    <Compile Include="Data\IUnitOfWork.cs" />
-    <Compile Include="Data\MrpDataClasses.cs">
-      <DependentUpon>MrpDataClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\MrpDataClasses.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MrpDataClasses.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Data\MrpDataClassesDataContext.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Model\PartStock.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -74,16 +58,18 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WmsRest\JsonUtil.cs" />
-    <Compile Include="WmsRest\PartStock.cs" />
     <Compile Include="WmsRest\WmsRestClient.cs" />
     <Compile Include="Service\IInventoryService.cs" />
     <Compile Include="Service\InventoryService.cs" />
-    <Compile Include="Service\Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">
       <Project>{c78be146-090f-44c7-b3bf-e0a328335422}</Project>
       <Name>KskPlugInSharedObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MrpPluginData\MrpPluginData.csproj">
+      <Project>{7d3614e6-e597-4bb3-8c58-df0295f2be92}</Project>
+      <Name>MrpPluginData</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -91,11 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Data\MrpDataClasses.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>MrpDataClasses.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,11 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Data\MrpDataClasses.dbml.layout">
-      <DependentUpon>MrpDataClasses.dbml</DependentUpon>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
