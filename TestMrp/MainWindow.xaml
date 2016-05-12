@@ -13,6 +13,10 @@
         <Button x:Name="button3" Content="RowMrp" HorizontalAlignment="Left" Margin="385,156,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button4" Content="NetMrp" HorizontalAlignment="Left" Margin="42,206,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="button5" Content="Order" HorizontalAlignment="Left" Margin="160,206,0,0" VerticalAlignment="Top" Width="75"/>
+        <GroupBox x:Name="groupBox" Header="数据集成" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="124" Width="497">
+            <Button x:Name="button6" Content="Inventory-MPS" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="103" Height="20"/>
+        </GroupBox>
+        <Button x:Name="button6_Copy" Content="Inventory-MRP" HorizontalAlignment="Left" Margin="160,56,0,0" VerticalAlignment="Top" Width="103" Height="20"/>
 
     </Grid>
 </Window>

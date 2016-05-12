@@ -36,4 +36,16 @@ Class MainWindow
         mrp.GenerateResult()
         MsgBox("done")
     End Sub
+
+    Private Sub button6_Click(sender As Object, e As RoutedEventArgs) Handles button6.Click
+        Dim mrp As Mrp.MrpMain = New Mrp.MrpMain("Data Source=VM08;Initial Catalog=Mrp;User ID=sa;Password=brilliantech123@")
+        mrp.DownloadInventory("MPS")
+        MsgBox("done")
+    End Sub
+
+    Private Sub button6_Copy_Click(sender As Object, e As RoutedEventArgs) Handles button6_Copy.Click
+        Dim mrp As Mrp.MrpMain = New Mrp.MrpMain("Data Source=VM08;Initial Catalog=Mrp;User ID=sa;Password=brilliantech123@")
+        mrp.DownloadInventory("MRP")
+        MsgBox("done")
+    End Sub
 End Class

@@ -16,3 +16,21 @@ c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\T
 c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.exe
 c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.xml
 c:\Users\Tianyi\documents\visual studio 2015\Projects\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.pdb
+D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.exe
+D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.pdb
+D:\dev\Mrp\TestXmlRpc\bin\Debug\TestXmlRpc.xml
+D:\dev\Mrp\TestXmlRpc\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\dev\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.dll
+D:\dev\Mrp\TestXmlRpc\bin\Debug\OdooWebSvc.pdb
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbprojResolveAssemblyReference.cache
+D:\dev\Mrp\TestXmlRpc\obj\Debug\MainWindow.g.vb
+D:\dev\Mrp\TestXmlRpc\obj\Debug\Application.g.vb
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.cache
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc_MarkupCompile.lref
+D:\dev\Mrp\TestXmlRpc\obj\Debug\MainWindow.baml
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.g.resources
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.Resources.resources
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.vbproj.GenerateResource.Cache
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.exe
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.xml
+D:\dev\Mrp\TestXmlRpc\obj\Debug\TestXmlRpc.pdb

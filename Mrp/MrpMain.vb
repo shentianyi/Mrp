@@ -105,18 +105,18 @@ Public Class MrpMain
     End Sub
 
     Public Sub excuteAssembly(type As String, data As ProcessData)
-        'Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
-        'Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
-        'If exes.Count = 0 Then
-        '    Throw New Exception("执行外接程序" & type & "时没有找到相应插件")
-        'Else
-        '    For Each plug In exes
-        '        Dim result As ProcessResult = ExternalProcess.Start(My.Application.Info.DirectoryPath & Combine("\Plugins", plug.assemblyFile), plug.type, plug.method, data)
-        '        If result.ResultCode = 0 Then
-        '            Throw New Exception("执行插件类型" & plug.pluginType & "时出错:" & result.FormattedErrors)
-        '        End If
-        '    Next
-        'End If
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+        Dim exes As List(Of Sys_Plugin) = (From exers In db.Sys_Plugins Where exers.pluginType = type Select exers Order By exers.seq Ascending).ToList
+        If exes.Count = 0 Then
+            Throw New Exception("执行外接程序" & type & "时没有找到相应插件")
+        Else
+            For Each plug In exes
+                Dim result As ProcessResult = ExternalProcess.Start(My.Application.Info.DirectoryPath & Combine("\Plugins", plug.assemblyFile), plug.type, plug.method, data)
+                If result.ResultCode = 0 Then
+                    Throw New Exception("执行插件类型" & plug.pluginType & "时出错:" & result.FormattedErrors)
+                End If
+            Next
+        End If
 
     End Sub
 
