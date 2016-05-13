@@ -39,6 +39,18 @@ namespace MrpPluginData
     partial void InsertSys_Plugin_Setting(Sys_Plugin_Setting instance);
     partial void UpdateSys_Plugin_Setting(Sys_Plugin_Setting instance);
     partial void DeleteSys_Plugin_Setting(Sys_Plugin_Setting instance);
+    partial void InsertData_Bom(Data_Bom instance);
+    partial void UpdateData_Bom(Data_Bom instance);
+    partial void DeleteData_Bom(Data_Bom instance);
+    partial void InsertData_OrderedPart(Data_OrderedPart instance);
+    partial void UpdateData_OrderedPart(Data_OrderedPart instance);
+    partial void DeleteData_OrderedPart(Data_OrderedPart instance);
+    partial void InsertData_PartVendorConfig(Data_PartVendorConfig instance);
+    partial void UpdateData_PartVendorConfig(Data_PartVendorConfig instance);
+    partial void DeleteData_PartVendorConfig(Data_PartVendorConfig instance);
+    partial void InsertData_ProductionPlan(Data_ProductionPlan instance);
+    partial void UpdateData_ProductionPlan(Data_ProductionPlan instance);
+    partial void DeleteData_ProductionPlan(Data_ProductionPlan instance);
     #endregion
 		
 		public MrpDataClassesDataContext() : 
@@ -92,6 +104,38 @@ namespace MrpPluginData
 			get
 			{
 				return this.GetTable<Sys_Plugin_Setting>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Data_Bom> Data_Bom
+		{
+			get
+			{
+				return this.GetTable<Data_Bom>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Data_OrderedPart> Data_OrderedPart
+		{
+			get
+			{
+				return this.GetTable<Data_OrderedPart>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Data_PartVendorConfig> Data_PartVendorConfig
+		{
+			get
+			{
+				return this.GetTable<Data_PartVendorConfig>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Data_ProductionPlan> Data_ProductionPlan
+		{
+			get
+			{
+				return this.GetTable<Data_ProductionPlan>();
 			}
 		}
 	}
@@ -617,6 +661,686 @@ namespace MrpPluginData
 					this._type = value;
 					this.SendPropertyChanged("type");
 					this.OntypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Data_Bom")]
+	public partial class Data_Bom : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _bomId;
+		
+		private string _assemblyPartId;
+		
+		private string _materialPartId;
+		
+		private double _quantity;
+		
+		private string _uom;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnbomIdChanging(string value);
+    partial void OnbomIdChanged();
+    partial void OnassemblyPartIdChanging(string value);
+    partial void OnassemblyPartIdChanged();
+    partial void OnmaterialPartIdChanging(string value);
+    partial void OnmaterialPartIdChanged();
+    partial void OnquantityChanging(double value);
+    partial void OnquantityChanged();
+    partial void OnuomChanging(string value);
+    partial void OnuomChanged();
+    #endregion
+		
+		public Data_Bom()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bomId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string bomId
+		{
+			get
+			{
+				return this._bomId;
+			}
+			set
+			{
+				if ((this._bomId != value))
+				{
+					this.OnbomIdChanging(value);
+					this.SendPropertyChanging();
+					this._bomId = value;
+					this.SendPropertyChanged("bomId");
+					this.OnbomIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assemblyPartId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string assemblyPartId
+		{
+			get
+			{
+				return this._assemblyPartId;
+			}
+			set
+			{
+				if ((this._assemblyPartId != value))
+				{
+					this.OnassemblyPartIdChanging(value);
+					this.SendPropertyChanging();
+					this._assemblyPartId = value;
+					this.SendPropertyChanged("assemblyPartId");
+					this.OnassemblyPartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_materialPartId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string materialPartId
+		{
+			get
+			{
+				return this._materialPartId;
+			}
+			set
+			{
+				if ((this._materialPartId != value))
+				{
+					this.OnmaterialPartIdChanging(value);
+					this.SendPropertyChanging();
+					this._materialPartId = value;
+					this.SendPropertyChanged("materialPartId");
+					this.OnmaterialPartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Float NOT NULL")]
+		public double quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this.OnquantityChanging(value);
+					this.SendPropertyChanging();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_uom", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string uom
+		{
+			get
+			{
+				return this._uom;
+			}
+			set
+			{
+				if ((this._uom != value))
+				{
+					this.OnuomChanging(value);
+					this.SendPropertyChanging();
+					this._uom = value;
+					this.SendPropertyChanged("uom");
+					this.OnuomChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Data_OrderedPart")]
+	public partial class Data_OrderedPart : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _partId;
+		
+		private string _sourceId;
+		
+		private double _quantity;
+		
+		private System.DateTime _arriveTime;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnpartIdChanging(string value);
+    partial void OnpartIdChanged();
+    partial void OnsourceIdChanging(string value);
+    partial void OnsourceIdChanged();
+    partial void OnquantityChanging(double value);
+    partial void OnquantityChanged();
+    partial void OnarriveTimeChanging(System.DateTime value);
+    partial void OnarriveTimeChanged();
+    #endregion
+		
+		public Data_OrderedPart()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partId", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string partId
+		{
+			get
+			{
+				return this._partId;
+			}
+			set
+			{
+				if ((this._partId != value))
+				{
+					this.OnpartIdChanging(value);
+					this.SendPropertyChanging();
+					this._partId = value;
+					this.SendPropertyChanged("partId");
+					this.OnpartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sourceId", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string sourceId
+		{
+			get
+			{
+				return this._sourceId;
+			}
+			set
+			{
+				if ((this._sourceId != value))
+				{
+					this.OnsourceIdChanging(value);
+					this.SendPropertyChanging();
+					this._sourceId = value;
+					this.SendPropertyChanged("sourceId");
+					this.OnsourceIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Float NOT NULL")]
+		public double quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this.OnquantityChanging(value);
+					this.SendPropertyChanging();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_arriveTime", DbType="DateTime NOT NULL")]
+		public System.DateTime arriveTime
+		{
+			get
+			{
+				return this._arriveTime;
+			}
+			set
+			{
+				if ((this._arriveTime != value))
+				{
+					this.OnarriveTimeChanging(value);
+					this.SendPropertyChanging();
+					this._arriveTime = value;
+					this.SendPropertyChanged("arriveTime");
+					this.OnarriveTimeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Data_PartVendorConfig")]
+	public partial class Data_PartVendorConfig : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _partId;
+		
+		private string _vendorId;
+		
+		private int _leadTime;
+		
+		private double _moq;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnpartIdChanging(string value);
+    partial void OnpartIdChanged();
+    partial void OnvendorIdChanging(string value);
+    partial void OnvendorIdChanged();
+    partial void OnleadTimeChanging(int value);
+    partial void OnleadTimeChanged();
+    partial void OnmoqChanging(double value);
+    partial void OnmoqChanged();
+    #endregion
+		
+		public Data_PartVendorConfig()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string partId
+		{
+			get
+			{
+				return this._partId;
+			}
+			set
+			{
+				if ((this._partId != value))
+				{
+					this.OnpartIdChanging(value);
+					this.SendPropertyChanging();
+					this._partId = value;
+					this.SendPropertyChanged("partId");
+					this.OnpartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendorId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string vendorId
+		{
+			get
+			{
+				return this._vendorId;
+			}
+			set
+			{
+				if ((this._vendorId != value))
+				{
+					this.OnvendorIdChanging(value);
+					this.SendPropertyChanging();
+					this._vendorId = value;
+					this.SendPropertyChanged("vendorId");
+					this.OnvendorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_leadTime", DbType="Int NOT NULL")]
+		public int leadTime
+		{
+			get
+			{
+				return this._leadTime;
+			}
+			set
+			{
+				if ((this._leadTime != value))
+				{
+					this.OnleadTimeChanging(value);
+					this.SendPropertyChanging();
+					this._leadTime = value;
+					this.SendPropertyChanged("leadTime");
+					this.OnleadTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_moq", DbType="Float NOT NULL")]
+		public double moq
+		{
+			get
+			{
+				return this._moq;
+			}
+			set
+			{
+				if ((this._moq != value))
+				{
+					this.OnmoqChanging(value);
+					this.SendPropertyChanging();
+					this._moq = value;
+					this.SendPropertyChanged("moq");
+					this.OnmoqChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Data_ProductionPlan")]
+	public partial class Data_ProductionPlan : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _planId;
+		
+		private string _assemblyPartId;
+		
+		private System.DateTime _time;
+		
+		private double _quantity;
+		
+		private string _bomId;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnplanIdChanging(string value);
+    partial void OnplanIdChanged();
+    partial void OnassemblyPartIdChanging(string value);
+    partial void OnassemblyPartIdChanged();
+    partial void OntimeChanging(System.DateTime value);
+    partial void OntimeChanged();
+    partial void OnquantityChanging(double value);
+    partial void OnquantityChanged();
+    partial void OnbomIdChanging(string value);
+    partial void OnbomIdChanged();
+    #endregion
+		
+		public Data_ProductionPlan()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_planId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string planId
+		{
+			get
+			{
+				return this._planId;
+			}
+			set
+			{
+				if ((this._planId != value))
+				{
+					this.OnplanIdChanging(value);
+					this.SendPropertyChanging();
+					this._planId = value;
+					this.SendPropertyChanged("planId");
+					this.OnplanIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_assemblyPartId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string assemblyPartId
+		{
+			get
+			{
+				return this._assemblyPartId;
+			}
+			set
+			{
+				if ((this._assemblyPartId != value))
+				{
+					this.OnassemblyPartIdChanging(value);
+					this.SendPropertyChanging();
+					this._assemblyPartId = value;
+					this.SendPropertyChanged("assemblyPartId");
+					this.OnassemblyPartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="DateTime NOT NULL")]
+		public System.DateTime time
+		{
+			get
+			{
+				return this._time;
+			}
+			set
+			{
+				if ((this._time != value))
+				{
+					this.OntimeChanging(value);
+					this.SendPropertyChanging();
+					this._time = value;
+					this.SendPropertyChanged("time");
+					this.OntimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Float NOT NULL")]
+		public double quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this.OnquantityChanging(value);
+					this.SendPropertyChanging();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bomId", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string bomId
+		{
+			get
+			{
+				return this._bomId;
+			}
+			set
+			{
+				if ((this._bomId != value))
+				{
+					this.OnbomIdChanging(value);
+					this.SendPropertyChanging();
+					this._bomId = value;
+					this.SendPropertyChanged("bomId");
+					this.OnbomIdChanged();
 				}
 			}
 		}
