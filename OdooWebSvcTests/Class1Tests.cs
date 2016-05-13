@@ -13,9 +13,7 @@ namespace OdooWebSvc.Tests
         [TestMethod()]
         public void TTest()
         { 
-            Class1 c = new Class1();
-            c.T();
-            string s = "1";
+           
         }
    
     }

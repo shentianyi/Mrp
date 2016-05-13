@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="Class1Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proxy\OdooCommonProxyTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OdooWebSvc\OdooWebSvc.csproj">
