@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,20 +45,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\OdooTableAttribute.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Attributes\ColumnAttribute.cs" />
+    <Compile Include="Attributes\TableAttribute.cs" />
     <Compile Include="Exceptions\OdooAuthException.cs" />
     <Compile Include="Model\IQuery.cs" />
     <Compile Include="Model\Mrp\Bom.cs" />
     <Compile Include="Model\Mrp\BomLine.cs" />
     <Compile Include="Model\Product\Part.cs" />
     <Compile Include="Model\Query.cs" />
+    <Compile Include="Odoo.cs" />
+    <Compile Include="OdooExpressionVisitor.cs" />
+    <Compile Include="OdooQueryContext.cs" />
+    <Compile Include="OdooQueryProvider.cs" />
+    <Compile Include="OdooQueryable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\OdooCommonProxy.cs" />
     <Compile Include="Proxy\OdooObjectProxy.cs" />
     <Compile Include="Proxy\OdooProxy.cs" />
+    <Compile Include="Service\BomService.cs" />
+    <Compile Include="Service\IBomService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">
+      <Project>{c78be146-090f-44c7-b3bf-e0a328335422}</Project>
+      <Name>KskPlugInSharedObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MrpPluginData\MrpPluginData.csproj">
+      <Project>{7d3614e6-e597-4bb3-8c58-df0295f2be92}</Project>
+      <Name>MrpPluginData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OdooWebSvc\OdooWebSvc.csproj">
       <Project>{6304e70c-c8c8-4590-baf9-1f86e38a15f8}</Project>
       <Name>OdooWebSvc</Name>

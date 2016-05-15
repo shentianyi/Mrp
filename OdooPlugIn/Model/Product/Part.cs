@@ -7,7 +7,7 @@ using System.Text;
 
 namespace OdooPlugIn.Model.Product
 {
-    [OdooTableAttribute("product.product")]
+    [TableAttribute("product.product")]
    public class Part
     {
         public int id { get; set; }
@@ -15,7 +15,6 @@ namespace OdooPlugIn.Model.Product
         public string name_template { get; set; }
 
         public int product_tmpl_id { get; set; }
-
-        public List<Bom> boms { get; set; }
+        
     }
 }

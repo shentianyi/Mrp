@@ -6,11 +6,11 @@ using System.Text;
 namespace OdooPlugIn.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class OdooTableAttribute : Attribute
+    public class TableAttribute : Attribute
     {
-        public string tableName { get; set; }
-        public OdooTableAttribute(string tableName) {
-            this.tableName = tableName;
+        public string Name { get; set; }
+        public TableAttribute(string name) {
+            this.Name = name;
         }
     }
 }
