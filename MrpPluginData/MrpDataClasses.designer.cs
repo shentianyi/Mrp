@@ -51,6 +51,9 @@ namespace MrpPluginData
     partial void InsertData_ProductionPlan(Data_ProductionPlan instance);
     partial void UpdateData_ProductionPlan(Data_ProductionPlan instance);
     partial void DeleteData_ProductionPlan(Data_ProductionPlan instance);
+    partial void InsertExe_MrpOrder(Exe_MrpOrder instance);
+    partial void UpdateExe_MrpOrder(Exe_MrpOrder instance);
+    partial void DeleteExe_MrpOrder(Exe_MrpOrder instance);
     #endregion
 		
 		public MrpDataClassesDataContext() : 
@@ -136,6 +139,14 @@ namespace MrpPluginData
 			get
 			{
 				return this.GetTable<Data_ProductionPlan>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Exe_MrpOrder> Exe_MrpOrder
+		{
+			get
+			{
+				return this.GetTable<Exe_MrpOrder>();
 			}
 		}
 	}
@@ -1341,6 +1352,188 @@ namespace MrpPluginData
 					this._bomId = value;
 					this.SendPropertyChanged("bomId");
 					this.OnbomIdChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Exe_MrpOrder")]
+	public partial class Exe_MrpOrder : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _partId;
+		
+		private string _vendorId;
+		
+		private double _quantity;
+		
+		private System.DateTime _requiredDate;
+		
+		private System.DateTime _orderDate;
+		
+    #region 可扩展性方法定义
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnpartIdChanging(string value);
+    partial void OnpartIdChanged();
+    partial void OnvendorIdChanging(string value);
+    partial void OnvendorIdChanged();
+    partial void OnquantityChanging(double value);
+    partial void OnquantityChanged();
+    partial void OnrequiredDateChanging(System.DateTime value);
+    partial void OnrequiredDateChanged();
+    partial void OnorderDateChanging(System.DateTime value);
+    partial void OnorderDateChanged();
+    #endregion
+		
+		public Exe_MrpOrder()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_partId", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string partId
+		{
+			get
+			{
+				return this._partId;
+			}
+			set
+			{
+				if ((this._partId != value))
+				{
+					this.OnpartIdChanging(value);
+					this.SendPropertyChanging();
+					this._partId = value;
+					this.SendPropertyChanged("partId");
+					this.OnpartIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vendorId", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string vendorId
+		{
+			get
+			{
+				return this._vendorId;
+			}
+			set
+			{
+				if ((this._vendorId != value))
+				{
+					this.OnvendorIdChanging(value);
+					this.SendPropertyChanging();
+					this._vendorId = value;
+					this.SendPropertyChanged("vendorId");
+					this.OnvendorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantity", DbType="Float NOT NULL")]
+		public double quantity
+		{
+			get
+			{
+				return this._quantity;
+			}
+			set
+			{
+				if ((this._quantity != value))
+				{
+					this.OnquantityChanging(value);
+					this.SendPropertyChanging();
+					this._quantity = value;
+					this.SendPropertyChanged("quantity");
+					this.OnquantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_requiredDate", DbType="DateTime NOT NULL")]
+		public System.DateTime requiredDate
+		{
+			get
+			{
+				return this._requiredDate;
+			}
+			set
+			{
+				if ((this._requiredDate != value))
+				{
+					this.OnrequiredDateChanging(value);
+					this.SendPropertyChanging();
+					this._requiredDate = value;
+					this.SendPropertyChanged("requiredDate");
+					this.OnrequiredDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_orderDate", DbType="DateTime NOT NULL")]
+		public System.DateTime orderDate
+		{
+			get
+			{
+				return this._orderDate;
+			}
+			set
+			{
+				if ((this._orderDate != value))
+				{
+					this.OnorderDateChanging(value);
+					this.SendPropertyChanging();
+					this._orderDate = value;
+					this.SendPropertyChanged("orderDate");
+					this.OnorderDateChanged();
 				}
 			}
 		}

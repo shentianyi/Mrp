@@ -39,10 +39,10 @@ namespace ZQueryFun
             //string userName = "admin";
             //string pwd = "123456@";
 
-            //OdooQueryContext qc = new OdooQueryContext(url, db, userName, pwd);
-            //// List<Bom> boms = qc.boms.Where(b => b.product_nr.Equals("P1")).ToList();
-            //List<Bom> boms = qc.boms.Where(b => b.product_nr.Equals("P1;P2")).ToList();
-
+            OdooQueryContext qc = new OdooQueryContext(url, db, userName, pwd);
+            // List<Bom> boms = qc.boms.Where(b => b.product_nr.Equals("P1")).ToList();
+           // List<Bom> boms = qc.boms.Where(b => b.product_nr.Equals("P1;P2")).ToList();
+            
 
             //foreach (Bom b in boms) {
             //    Console.WriteLine(b.code+":"+b.product_nr);
@@ -69,9 +69,11 @@ namespace ZQueryFun
 
             ProcessResult result = o.CreateBomByParts(pd);
 
-            ProcessResult presult = o.CreateConfirmedProductionPlan(pd);
+            ProcessResult presult = o.CreateConfirmedProductionPlans(pd);
 
-            ProcessResult oresult = o.CreatePurchaseOrderedPart(pd);
+            ProcessResult oresult = o.CreatePurchaseOrderedParts(pd);
+
+            ProcessResult pvresult = o.CreatePartVendorConfigs(pd);
             Console.Read();
         }
     }

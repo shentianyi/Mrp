@@ -56,11 +56,13 @@
     </Compile>
     <Compile Include="Rep\Implement\BaseRep.cs" />
     <Compile Include="Rep\Implement\DataOrderedPartRep.cs" />
+    <Compile Include="Rep\Implement\DataPartVendorConfigRep.cs" />
     <Compile Include="Rep\Implement\DataProductionPlanRep.cs" />
     <Compile Include="Rep\Implement\DataInventoryRep.cs" />
     <Compile Include="Rep\Implement\DataBomRep.cs" />
     <Compile Include="Rep\Implement\SettingRep.cs" />
     <Compile Include="Rep\Interface\IBaseRep.cs" />
+    <Compile Include="Rep\Interface\IDataPartVendorConfigRep.cs" />
     <Compile Include="Rep\Interface\IDataOrderedPartRep.cs" />
     <Compile Include="Rep\Interface\IDataProductionPlanRep.cs" />
     <Compile Include="Rep\Interface\IDataBomRep.cs" />

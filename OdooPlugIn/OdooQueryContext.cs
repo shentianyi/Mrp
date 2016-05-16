@@ -7,6 +7,7 @@ using System.Text;
 using OdooPlugIn.Model.Mrp;
 using OdooPlugIn.Proxy;
 using OdooPlugIn.Model.Purchase;
+using OdooPlugIn.Model.Product;
 
 namespace OdooPlugIn
 {
@@ -30,6 +31,7 @@ namespace OdooPlugIn
         public OdooQueryable<BomLine> bomLines = new OdooQueryable<BomLine>();
         public OdooQueryable<Production> productions = new OdooQueryable<Production>();
         public OdooQueryable<OrderLine> orderLines = new OdooQueryable<OrderLine>();
+        public OdooQueryable<PartVendor> partVendors = new OdooQueryable<PartVendor>();
 
         internal static object Execute(Expression expression, bool IsEnumerable)
         {

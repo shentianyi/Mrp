@@ -25,27 +25,27 @@ namespace OdooPlugIn.Service
             {
                 using (IUnitOfWork unit = this.DbContext)
                 {
-                   
-                        List<Data_ProductionPlan> productionPlans = new List<Data_ProductionPlan>();
-                        IDataProductionPlanRep rep = new DataProductionPlanRep(unit);
+
+                    List<Data_ProductionPlan> productionPlans = new List<Data_ProductionPlan>();
+                    IDataProductionPlanRep rep = new DataProductionPlanRep(unit);
 
 
-                foreach (var production in this.GetConfirmed())
-                {
-                    productionPlans.Add(new Data_ProductionPlan()
+                    foreach (var production in this.GetConfirmed())
                     {
-                        planId = production.name,
-                        assemblyPartId = production.product_nr,
-                        time = production.date_planned,
-                        quantity = production.product_qty,
-                        bomId = production.bom_code
-                    });
-                }
+                        productionPlans.Add(new Data_ProductionPlan()
+                        {
+                            planId = production.name,
+                            assemblyPartId = production.product_nr,
+                            time = production.date_planned,
+                            quantity = production.product_qty,
+                            bomId = production.bom_code
+                        });
+                    }
 
-                        rep.Insert(productionPlans);
-                        unit.Submit();
-                        result.ResultCode = 1;
-                        result.ReturnedValues.Add("productionPlans", productionPlans);
+                    rep.Insert(productionPlans);
+                    unit.Submit();
+                    result.ResultCode = 1;
+                    result.ReturnedValues.Add("productionPlans", productionPlans);
                 }
             }
             catch (Exception e)
