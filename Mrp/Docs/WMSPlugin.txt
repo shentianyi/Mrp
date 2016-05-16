@@ -3,11 +3,11 @@
   values('WMS Plugin','INV','WMSPlugIn.dll','Inventory','CreateInventory',1);
 
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','PP','OdooPlugIn.dll','Odoo','CreateConfirmedProductionPlan',1);
+  values('Odoo Plugin','PP','OdooPlugIn.dll','Odoo','CreateConfirmedProductionPlans',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
   values('Odoo Plugin','BOM','OdooPlugIn.dll','Odoo','CreateBomByParts',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','ORDER','OdooPlugIn.dll','Odoo','CreatePurchaseOrderedPart',1);
+  values('Odoo Plugin','ORDER','OdooPlugIn.dll','Odoo','CreatePurchaseOrderedParts',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
   values('Odoo Plugin','VENDOR','OdooPlugIn.dll','Odoo','CreatePartVendorConfigs',1);
 
