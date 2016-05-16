@@ -15,3 +15,4 @@ C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInS
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
