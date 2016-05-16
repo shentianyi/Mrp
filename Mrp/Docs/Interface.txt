@@ -14,11 +14,11 @@ Return: KskPlugInSharedObject.ProcessResult
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Plugin Type: PP
-Plugin Job: Get production plan and insert to the table
+Plugin Job: Get Confirmed production plan and insert to the table
 Plugin Table: db.Data_ProductionPlan
 Plugin Parameter: KskPlugInSharedObject.ProcessData 
-				 ProcessData["db"]: String, connection string of the parent system
-				
+				  ProcessData["db"]: String, connection string of the parent system
+
 Action: Fill the db.Data_ProductionPlan Table
 Return: KskPlugInSharedObject.ProcessResult
 		ProcessResult.ResultCode: 0 - failed 1-successful
