@@ -8,6 +8,6 @@ namespace OdooPlugIn.Service
 {
     public interface IProductionService
     {
-        List<Production> GetConfirmed(string from_date, string to_date);
+        List<Production> GetConfirmed();
     }
 }

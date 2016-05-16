@@ -9,9 +9,9 @@ namespace OdooPlugIn.Service
 {
     public class ProductionService : ServiceBase, IProductionService
     {
-        public List<Production> GetConfirmed(string from_date, string to_date)
+        public List<Production> GetConfirmed()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

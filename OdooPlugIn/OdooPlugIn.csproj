@@ -51,6 +51,7 @@
     <Compile Include="Model\IQuery.cs" />
     <Compile Include="Model\Mrp\Bom.cs" />
     <Compile Include="Model\Mrp\BomLine.cs" />
+    <Compile Include="Model\Mrp\Production.cs" />
     <Compile Include="Model\Product\Part.cs" />
     <Compile Include="Model\Query.cs" />
     <Compile Include="Odoo.cs" />
@@ -64,6 +65,8 @@
     <Compile Include="Proxy\OdooProxy.cs" />
     <Compile Include="Service\BomService.cs" />
     <Compile Include="Service\IBomService.cs" />
+    <Compile Include="Service\IProductionService.cs" />
+    <Compile Include="Service\ProductionService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KskPlugInSharedObject\KskPlugInSharedObject.vbproj">

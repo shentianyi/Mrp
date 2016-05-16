@@ -16,6 +16,9 @@ namespace MrpPluginData.Service
         private string dbConnectString;
         private MrpDataClassesDataContext dbContext;
         public string DbConnectString { get { return dbConnectString; } }
+
+
+
         public MrpDataClassesDataContext DbContext
         {
             get
@@ -31,6 +34,7 @@ namespace MrpPluginData.Service
         public ServiceBase(string dbConnectString)
         {
             this.dbConnectString = dbConnectString;
+            
             PlugSetting.InitSetting(GetSetting());
         }
 
