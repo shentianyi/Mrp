@@ -56,8 +56,10 @@
     </Compile>
     <Compile Include="Rep\Implement\BaseRep.cs" />
     <Compile Include="Rep\Implement\DataInventoryRep.cs" />
+    <Compile Include="Rep\Implement\DataBomRep.cs" />
     <Compile Include="Rep\Implement\SettingRep.cs" />
     <Compile Include="Rep\Interface\IBaseRep.cs" />
+    <Compile Include="Rep\Interface\IDataBomRep.cs" />
     <Compile Include="Rep\Interface\IDataInventoryRep.cs" />
     <Compile Include="Rep\Interface\ISettingRep.cs" />
     <Compile Include="MrpDataClassesDataContext.cs" />
