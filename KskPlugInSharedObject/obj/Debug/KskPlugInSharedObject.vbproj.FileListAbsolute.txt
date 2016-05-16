@@ -6,3 +6,12 @@ C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInS
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
 C:\Users\Charlot\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\bin\Debug\KskPlugInSharedObject.xml
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.Resources.resources
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.GenerateResource.Cache
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb

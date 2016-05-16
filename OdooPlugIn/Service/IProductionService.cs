@@ -1,4 +1,5 @@
-﻿using OdooPlugIn.Model.Mrp;
+﻿using KskPlugInSharedObject;
+using OdooPlugIn.Model.Mrp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace OdooPlugIn.Service
 {
     public interface IProductionService
     {
+        ProcessResult CreateProuduction();
         List<Production> GetConfirmed();
     }
 }

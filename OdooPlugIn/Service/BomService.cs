@@ -85,7 +85,6 @@ namespace OdooPlugIn.Service
         }
 
         private OdooQueryContext GetOdooContext() {
-
             OdooQueryContext qc = new OdooQueryContext(PlugSetting.Setting["odoo_host"],
                 PlugSetting.Setting["odoo_db"],
                 PlugSetting.Setting["odoo_user"],
