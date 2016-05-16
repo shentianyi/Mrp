@@ -46,6 +46,9 @@ namespace OdooPlugIn
                 if (propertyAttr != null)
                 {
                     var value = TryEvaluate(expression.Arguments[0]);
+                    if (value is ConstantExpression) {
+                        value = (value as ConstantExpression).Value;
+                    }
                     string svalue = value.ToString();
                     if (svalue.Contains(";"))
                     {

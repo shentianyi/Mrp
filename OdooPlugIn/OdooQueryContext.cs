@@ -6,6 +6,8 @@ using System.Reflection;
 using System.Text;
 using OdooPlugIn.Model.Mrp;
 using OdooPlugIn.Proxy;
+using OdooPlugIn.Model.Purchase;
+using OdooPlugIn.Model.Product;
 
 namespace OdooPlugIn
 {
@@ -27,6 +29,9 @@ namespace OdooPlugIn
 
         public OdooQueryable<Bom> boms = new OdooQueryable<Bom>();
         public OdooQueryable<BomLine> bomLines = new OdooQueryable<BomLine>();
+        public OdooQueryable<Production> productions = new OdooQueryable<Production>();
+        public OdooQueryable<OrderLine> orderLines = new OdooQueryable<OrderLine>();
+        public OdooQueryable<PartVendor> partVendors = new OdooQueryable<PartVendor>();
 
         internal static object Execute(Expression expression, bool IsEnumerable)
         {
@@ -42,6 +47,14 @@ namespace OdooPlugIn
             return mii.Invoke(op, new object[6] { Db, uid, Pwd, v.TableName, v.ModelName, v.Filters.ToArray() });
         }
 
+        public int Create<T>(T obj)
+        {
+            OdooCommonProxy cp = new OdooCommonProxy(Url);
+            int uid = cp.Authenticate(Db, UserName, Pwd);
+            OdooObjectProxy op = new OdooObjectProxy(Url);
+
+            return op.Create<T>(Db, uid, Pwd, obj);
+        }
 
     }
 }

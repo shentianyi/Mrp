@@ -7,6 +7,7 @@ using MrpPluginData;
 using MrpPluginData.Rep.Interface;
 using MrpPluginData.Service;
 using OdooPlugIn.Model.Mrp;
+using OdooPlugIn.Helper;
 
 namespace OdooPlugIn.Service
 {
@@ -73,24 +74,17 @@ namespace OdooPlugIn.Service
         public List<Bom> GetOdooBomByParts(List<string> partNrs)
         {
             this.PartNrString = string.Join(";", partNrs.ToArray());
-            List<Bom> boms = GetOdooContext().boms.Where(b => b.product_nr.Equals(this.PartNrString)).ToList();
+            List<Bom> boms = QueryContextHelper.GetOdooContext().boms.Where(b => b.product_nr.Equals(this.PartNrString)).ToList();
             return boms;
         }
 
         public List<BomLine> GetOdooBomLineByBomId(int bomId)
         {
             this.bomId = bomId;
-            List<BomLine> bomLines = GetOdooContext().bomLines.Where(b => b.bom_id.Equals(this.bomId)).ToList();
+            List<BomLine> bomLines = QueryContextHelper.GetOdooContext().bomLines.Where(b => b.bom_id.Equals(this.bomId)).ToList();
             return bomLines;
         }
 
-        private OdooQueryContext GetOdooContext() {
-
-            OdooQueryContext qc = new OdooQueryContext(PlugSetting.Setting["odoo_host"],
-                PlugSetting.Setting["odoo_db"],
-                PlugSetting.Setting["odoo_user"],
-                PlugSetting.Setting["odoo_pwd"]);
-            return qc;
-        }
+       
     }
 }

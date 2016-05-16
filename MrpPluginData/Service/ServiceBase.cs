@@ -12,12 +12,10 @@ namespace MrpPluginData.Service
     public class ServiceBase
     {
        
-
         private string dbConnectString;
         private MrpDataClassesDataContext dbContext;
         public string DbConnectString { get { return dbConnectString; } }
-
-
+        
 
         public MrpDataClassesDataContext DbContext
         {

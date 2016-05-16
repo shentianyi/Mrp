@@ -1,11 +1,24 @@
 ﻿1. 在数据库 Sys_Plugin 表中插入以下数据
   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('WMS Plugin','INV','WMSPlugIn.dll','Inventory','CreateInventory',1)
+  values('WMS Plugin','INV','WMSPlugIn.dll','Inventory','CreateInventory',1);
+
+   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('Odoo Plugin','PP','OdooPlugIn.dll','Odoo','CreateConfirmedProductionPlans',1);
+   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('Odoo Plugin','BOM','OdooPlugIn.dll','Odoo','CreateBomByParts',1);
+   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('Odoo Plugin','ORDER','OdooPlugIn.dll','Odoo','CreatePurchaseOrderedParts',1);
+   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('Odoo Plugin','VENDOR','OdooPlugIn.dll','Odoo','CreatePartVendorConfigs',1);
+   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
+  values('Odoo Plugin','PO','OdooPlugIn.dll','Odoo','CreateOdooOrders',1);
+
+
 2. 创建Sys_Plugin_Setting表
 USE [Mrp]
 GO
 
-/****** Object:  Table [dbo].[Sys_Plugin_Setting]    Script Date: 05/12/2016 18:34:29 ******/
+/****** Object:  Table [dbo].[Sys_Plugin_Setting]    Script Date: 05/16/2016 16:05:25 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -31,7 +44,7 @@ GO
 
 SET ANSI_PADDING OFF
 GO
-
+ 
 
 3. 在数据库 Sys_Plugin_Setting 表中插入以下数据,其中host是wms的服务器地址
 INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
@@ -39,8 +52,24 @@ INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
      VALUES('wms_host','http://192.168.1.27:9000','WMS Plugin')
 GO
 
-
 INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
      ([name],[value],[pluginName])
      VALUES('wms_inventory_api','/api/v4/storage/parts_stock','WMS Plugin')
+GO
+//-----------------------------------------------------------------------------------//
+INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
+     ([name],[value],[pluginName])
+     VALUES('odoo_host','http://42.121.111.38:8000','Odoo Plugin')
+GO
+INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
+     ([name],[value],[pluginName])
+     VALUES('odoo_db','CharlotDb','Odoo Plugin')
+GO
+INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
+     ([name],[value],[pluginName])
+     VALUES('odoo_user','admin','Odoo Plugin')
+GO
+INSERT INTO [Mrp].[dbo].[Sys_Plugin_Setting]
+     ([name],[value],[pluginName])
+     VALUES('odoo_pwd','123456@','Odoo Plugin')
 GO
