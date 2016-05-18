@@ -46,6 +46,25 @@ namespace OdooPlugIn.Proxy
         {
             int id = 0;
             Type type = typeof(T);
+            string modelName = GetModelName<T>(obj);
+            MethodInfo mi = type.GetMethod("ConvertToXml");
+            XmlRpcStruct xml = mi.Invoke(obj,null) as XmlRpcStruct;
+            id = this.odooObject.Create(db, uid, pwd, modelName, "create",new XmlRpcStruct[1] { xml });
+
+            return id;
+        }
+
+        public void Creates<T>(string db, int uid, string pwd, List<T> obj)
+        {
+            Type type = typeof(T);
+            string modelName = GetModelName<T>(obj.First());
+            MethodInfo mi = type.GetMethod("ConvertToXmls");
+            XmlRpcStruct[] xmls = mi.Invoke(null,new object[1] { obj}) as XmlRpcStruct[];
+            this.odooObject.Creates(db, uid, pwd, modelName, "create", new XmlRpcStruct[1][] { xmls });
+        }
+
+        public string GetModelName<T>(T obj) {
+            Type type = typeof(T);
             object tableAttr = type.GetCustomAttributes(
                                        typeof(TableAttribute), false)
                                        .FirstOrDefault();
@@ -54,11 +73,7 @@ namespace OdooPlugIn.Proxy
             {
                 modelName = (tableAttr as TableAttribute).Name;
             }
-            MethodInfo mi = type.GetMethod("ConvertToXml");
-            XmlRpcStruct xml = mi.Invoke(obj,null) as XmlRpcStruct;
-            id = this.odooObject.Create(db, uid, pwd, modelName, "create",new XmlRpcStruct[1] { xml });
-
-            return id;
+            return modelName;
         }
     }
 }

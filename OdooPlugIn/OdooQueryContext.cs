@@ -56,5 +56,18 @@ namespace OdooPlugIn
             return op.Create<T>(Db, uid, Pwd, obj);
         }
 
+        public void Creates<T>(List<T> obj)
+        {
+            throw new NotImplementedException();
+            if (obj.Count > 0)
+            {
+                OdooCommonProxy cp = new OdooCommonProxy(Url);
+                int uid = cp.Authenticate(Db, UserName, Pwd);
+                OdooObjectProxy op = new OdooObjectProxy(Url);
+
+                op.Creates<T>(Db, uid, Pwd, obj);
+            }
+        }
+
     }
 }

@@ -95,10 +95,11 @@ namespace OdooPlugIn.Service
                         if (pvs.Count > 0)
                         {
                             PartVendor pv = pvs.First();
-                            Order odooOrder = new Order() { partner_id = pv.vendor_id, date_order = order.orderDate };
+                            Order odooOrder = new Order() { partner_id = pv.vendor_id, date_order = order.orderDate.ToUniversalTime() };
                             int orderId = qc.Create<Order>(odooOrder);
                             if (orderId > 0)
                             {
+                              //  List<OrderLine> orderLines = new List<OrderLine>();
                                 // create oder line
                                 foreach (var mrpOrder in mrpOrders)
                                 {
@@ -111,16 +112,18 @@ namespace OdooPlugIn.Service
                                         OrderLine ol = new OrderLine()
                                         {
                                             order_id = orderId,
-                                            date_planned = mrpOrder.requiredDate,
+                                            date_planned = mrpOrder.requiredDate.ToUniversalTime(),
                                             product_id = _pv.product_tmpl_id,
                                             product_uom_id = _pv.product_uom_id,
                                             product_qty = (float)mrpOrder.quantity,
                                             price_unit = _pv.price,
                                             product_nr = _pv.product_nr
                                         };
-                                        qc.Create<OrderLine>(ol);
+                                       // orderLines.Add(ol);
+                                      qc.Create<OrderLine>(ol);
                                     }
                                 }
+                              //  qc.Creates<OrderLine>(orderLines);
                             }
                         }
                     }

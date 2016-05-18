@@ -93,16 +93,16 @@ namespace OdooPlugIn.Model.Purchase
             xml.Add("product_qty", this.product_qty.ToString());
             xml.Add("price_unit", this.price_unit.ToString());
             xml.Add("name", this.product_nr.ToString());
-
-            //xml.Add("order_id", 19);
-            //xml.Add("date_planned", this.date_planned.ToString());
-            //xml.Add("product_id", 1);
-            //xml.Add("product_uom", 1);
-            //xml.Add("product_qty", 1);
-            //xml.Add("price_unit", 1);
-            //xml.Add("name", 1);
-
             return xml;
+        }
+
+        public static XmlRpcStruct[] ConvertToXmls(List<OrderLine> orderLines) {
+            XmlRpcStruct[] xmls = new XmlRpcStruct[orderLines.Count];
+
+            for (int i = 0; i < orderLines.Count; i++) {
+                xmls[i] = orderLines[i].ConvertToXml();
+            }
+            return xmls;
         }
 
     }
