@@ -48,6 +48,7 @@
     <Compile Include="Attributes\ColumnAttribute.cs" />
     <Compile Include="Attributes\TableAttribute.cs" />
     <Compile Include="Exceptions\OdooAuthException.cs" />
+    <Compile Include="Helper\OdooFieldValueHelper.cs" />
     <Compile Include="Helper\QueryContextHelper.cs" />
     <Compile Include="Model\IQuery.cs" />
     <Compile Include="Model\Mrp\Bom.cs" />

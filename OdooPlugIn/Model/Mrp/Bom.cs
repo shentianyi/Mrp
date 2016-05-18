@@ -5,6 +5,7 @@ using System.Text;
 using OdooPlugIn.Model.Product;
 using OdooPlugIn.Attributes;
 using CookComputing.XmlRpc;
+using OdooPlugIn.Helper;
 
 namespace OdooPlugIn.Model.Mrp
 {
@@ -39,7 +40,7 @@ namespace OdooPlugIn.Model.Mrp
             bom.id =int.Parse( xml["id"].ToString());
             bom.code = xml["code"].ToString();
             bom.product_tmpl_id = int.Parse((xml["product_tmpl_id"] as object[])[0].ToString());
-            bom.product_nr = (xml["product_tmpl_id"] as object[])[1].ToString();
+            bom.product_nr = OdooFieldValueHelper.ParsePartNr((xml["product_tmpl_id"] as object[])[1].ToString());
 
 
             bom.product_uom_id = int.Parse((xml["product_uom"] as object[])[0].ToString());

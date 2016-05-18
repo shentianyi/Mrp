@@ -52,7 +52,8 @@ Public Class MrpMain
         parts = (From mrpPart In db.Exe_GrossMrps Select mrpPart.partId Distinct).ToList
         Dim data As ProcessData = New ProcessData
         data.Data.Add("db", dbconn)
-        excuteAssembly("PO", data)
+        ''excuteAssembly("PO", data)
+        excuteAssembly("ORDER", data)
     End Sub
 
     Public Sub DownloadProductionPlan()
@@ -101,6 +102,14 @@ Public Class MrpMain
         data.Data.Add("db", dbconn)
         data.Data.Add("parts", parts)
         excuteAssembly("INV", data)
+    End Sub
+
+    Public Sub CreateOrders()
+        Dim db As MrpDataDataContext = New MrpDataDataContext(dbconn)
+
+        Dim data As ProcessData = New ProcessData
+        data.Data.Add("db", dbconn)
+        excuteAssembly("PO", data)
     End Sub
 
     Public Sub excuteAssembly(type As String, data As ProcessData)
@@ -300,7 +309,6 @@ Public Class MrpMain
     End Sub
 
     Public Sub SendResult()
-
-
+        CreateOrders()
     End Sub
 End Class

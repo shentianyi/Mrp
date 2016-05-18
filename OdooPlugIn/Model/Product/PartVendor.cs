@@ -1,5 +1,6 @@
 ﻿using CookComputing.XmlRpc;
 using OdooPlugIn.Attributes;
+using OdooPlugIn.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,8 @@ namespace OdooPlugIn.Model.Product
             partVendor.vendor_id = int.Parse((xml["name"] as object[])[0].ToString());
             partVendor.vendor_nr = (xml["name"] as object[])[1].ToString();
             partVendor.product_tmpl_id = int.Parse((xml["product_tmpl_id"] as object[])[0].ToString());
-            partVendor.product_nr = (xml["product_tmpl_id"] as object[])[1].ToString();
+          //  partVendor.product_nr = (xml["product_tmpl_id"] as object[])[1].ToString();
+            partVendor.product_nr = OdooFieldValueHelper.ParsePartNr((xml["product_tmpl_id"] as object[])[1].ToString());
 
 
 

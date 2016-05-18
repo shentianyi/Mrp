@@ -17,6 +17,7 @@
             <Button x:Name="button6" Content="Inventory-MPS" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="103" Height="20"/>
         </GroupBox>
         <Button x:Name="button6_Copy" Content="Inventory-MRP" HorizontalAlignment="Left" Margin="160,56,0,0" VerticalAlignment="Top" Width="103" Height="20"/>
+        <Button x:Name="button7" Content="Up Order" HorizontalAlignment="Left" Margin="274,206,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

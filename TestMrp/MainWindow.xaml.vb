@@ -56,4 +56,10 @@ Class MainWindow
         MsgBox("done")
     End Sub
 
+    Private Sub button7_Click(sender As Object, e As RoutedEventArgs) Handles button7.Click
+        Dim mrp As Mrp.MrpMain = New Mrp.MrpMain(connectStr)
+        mrp.CreateOrders()
+ 
+        MsgBox("done")
+    End Sub
 End Class

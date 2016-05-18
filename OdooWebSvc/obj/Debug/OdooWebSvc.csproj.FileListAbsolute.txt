@@ -14,4 +14,3 @@ C:\Users\Charlot\Documents\GitHub\Mrp\OdooWebSvc\bin\Debug\OdooWebSvc.pdb
 C:\Users\Charlot\Documents\GitHub\Mrp\OdooWebSvc\bin\Debug\CookComputing.XmlRpcV2.dll
 C:\Users\Charlot\Documents\GitHub\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.dll
 C:\Users\Charlot\Documents\GitHub\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.pdb
-C:\Users\Wangsong\Documents\GitHub\Mrp\OdooWebSvc\obj\Debug\OdooWebSvc.csprojResolveAssemblyReference.cache

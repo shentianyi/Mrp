@@ -71,11 +71,11 @@ namespace ZQueryFun
 
             //ProcessResult presult = o.CreateConfirmedProductionPlans(pd);
 
-            //ProcessResult oresult = o.CreatePurchaseOrderedParts(pd);
+             ProcessResult oresult = o.CreatePurchaseOrderedParts(pd);
 
             //ProcessResult pvresult = o.CreatePartVendorConfigs(pd);
 
-            ProcessResult coresult = o.CreateOdooOrders(pd);
+           // ProcessResult coresult = o.CreateOdooOrders(pd);
 
             Console.Read();
         }
