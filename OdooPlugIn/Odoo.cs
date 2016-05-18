@@ -18,6 +18,7 @@ namespace OdooPlugIn
         {
             IProductionService ps = new ProductionService(data.Data["db"] as string);
             return ps.CreateProuduction();
+
         }
 
         /// <summary>

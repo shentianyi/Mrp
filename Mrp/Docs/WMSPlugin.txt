@@ -1,17 +1,17 @@
 ﻿1. 在数据库 Sys_Plugin 表中插入以下数据
   insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('WMS Plugin','INV','WMSPlugIn.dll','Inventory','CreateInventory',1);
+  values('WMS Plugin','INV','WMSPlugIn.dll','WMSPlugIn.Inventory','CreateInventory',1);
 
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','PP','OdooPlugIn.dll','Odoo','CreateConfirmedProductionPlans',1);
+  values('Odoo Plugin','PP','OdooPlugIn.dll','OdooPlugIn.Odoo','CreateConfirmedProductionPlans',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','BOM','OdooPlugIn.dll','Odoo','CreateBomByParts',1);
+  values('Odoo Plugin','BOM','OdooPlugIn.dll','OdooPlugIn.Odoo','CreateBomByParts',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','ORDER','OdooPlugIn.dll','Odoo','CreatePurchaseOrderedParts',1);
+  values('Odoo Plugin','ORDER','OdooPlugIn.dll','OdooPlugIn.Odoo','CreatePurchaseOrderedParts',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','VENDOR','OdooPlugIn.dll','Odoo','CreatePartVendorConfigs',1);
+  values('Odoo Plugin','VENDOR','OdooPlugIn.dll','OdooPlugIn.Odoo','CreatePartVendorConfigs',1);
    insert into [Mrp].[dbo].[Sys_Plugin] (name,pluginType,assemblyFile,[type],method,seq)
-  values('Odoo Plugin','PO','OdooPlugIn.dll','Odoo','CreateOdooOrders',1);
+  values('Odoo Plugin','PO','OdooPlugIn.dll','OdooPlugIn.Odoo','CreateOdooOrders',1);
 
 
 2. 创建Sys_Plugin_Setting表
