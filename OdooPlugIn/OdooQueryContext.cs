@@ -47,6 +47,14 @@ namespace OdooPlugIn
             return mii.Invoke(op, new object[6] { Db, uid, Pwd, v.TableName, v.ModelName, v.Filters.ToArray() });
         }
 
+        public int Create<T>(T obj)
+        {
+            OdooCommonProxy cp = new OdooCommonProxy(Url);
+            int uid = cp.Authenticate(Db, UserName, Pwd);
+            OdooObjectProxy op = new OdooObjectProxy(Url);
+
+            return op.Create<T>(Db, uid, Pwd, obj);
+        }
 
     }
 }

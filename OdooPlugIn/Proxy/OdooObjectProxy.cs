@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using CookComputing.XmlRpc;
+using OdooPlugIn.Attributes;
 using OdooWebSvc;
 
 namespace OdooPlugIn.Proxy
@@ -39,6 +40,25 @@ namespace OdooPlugIn.Proxy
                 }
             }
             return results;
+        }
+
+        public int Create<T>(string db, int uid, string pwd, T obj)
+        {
+            int id = 0;
+            Type type = typeof(T);
+            object tableAttr = type.GetCustomAttributes(
+                                       typeof(TableAttribute), false)
+                                       .FirstOrDefault();
+            string modelName = string.Empty;
+            if (tableAttr != null)
+            {
+                modelName = (tableAttr as TableAttribute).Name;
+            }
+            MethodInfo mi = type.GetMethod("ConvertToXml");
+            XmlRpcStruct xml = mi.Invoke(obj,null) as XmlRpcStruct;
+            id = this.odooObject.Create(db, uid, pwd, modelName, "create",new XmlRpcStruct[1] { xml });
+
+            return id;
         }
     }
 }

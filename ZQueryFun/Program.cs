@@ -34,10 +34,10 @@ namespace ZQueryFun
             //XmlRpcStruct[] boms = obj.SearchAndRead("CharlotDb", uid, "123456@", "mrp.bom", "search_read",q, new XmlRpcStruct());
             //string s = "";
 
-            //string url = "http://42.121.111.38:8000";
-            //string db = "CharlotDb";
-            //string userName = "admin";
-            //string pwd = "123456@";
+            string url = "http://42.121.111.38:8000";
+            string db = "CharlotDb";
+            string userName = "admin";
+            string pwd = "123456@";
 
             OdooQueryContext qc = new OdooQueryContext(url, db, userName, pwd);
             // List<Bom> boms = qc.boms.Where(b => b.product_nr.Equals("P1")).ToList();
@@ -54,8 +54,8 @@ namespace ZQueryFun
             //    Console.WriteLine(b.bom_display + ":"+b.product_nr);
             //}
 
-            //string dbConnectStr = @"Data Source=Charlot-PC\SQLEXPRESS;Initial Catalog=Mrp;Persist Security Info=True;User ID=sa;Password=123456@";
-            string dbConnectStr = @"Data Source=WANGSONG-PC;Initial Catalog=Mrp;Persist Security Info=True;User ID=sa;Password=wangsong";
+            string dbConnectStr = @"Data Source=Charlot-PC\SQLEXPRESS;Initial Catalog=Mrp;Persist Security Info=True;User ID=sa;Password=123456@";
+            //string dbConnectStr = @"Data Source=WANGSONG-PC;Initial Catalog=Mrp;Persist Security Info=True;User ID=sa;Password=wangsong";
 
             Odoo o = new Odoo();
             List<string> partNrs = new List<string>();
@@ -67,13 +67,16 @@ namespace ZQueryFun
             pd.Data["db"] = dbConnectStr;
             pd.Data["parts"] = partNrs;
 
-            ProcessResult result = o.CreateBomByParts(pd);
+            //ProcessResult result = o.CreateBomByParts(pd);
 
-            ProcessResult presult = o.CreateConfirmedProductionPlans(pd);
+            //ProcessResult presult = o.CreateConfirmedProductionPlans(pd);
 
-            ProcessResult oresult = o.CreatePurchaseOrderedParts(pd);
+            //ProcessResult oresult = o.CreatePurchaseOrderedParts(pd);
 
-            ProcessResult pvresult = o.CreatePartVendorConfigs(pd);
+            //ProcessResult pvresult = o.CreatePartVendorConfigs(pd);
+
+            ProcessResult coresult = o.CreateOdooOrders(pd);
+
             Console.Read();
         }
     }

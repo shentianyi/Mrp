@@ -9,7 +9,7 @@ namespace OdooWebSvc
     public interface IOdooObject : IXmlRpcProxy
     {
         [XmlRpcMethod("execute_kw")]
-        int Create(string dbname, int uid, string pwd, string modelName, string method, XmlRpcStruct strct);
+        int Create(string dbname, int uid, string pwd, string modelName, string method, XmlRpcStruct[] strct);
         [XmlRpcMethod("execute_kw")]
         XmlRpcStruct[] Read(string dbname, int uid, string pwd, string modelName, string method, int[] ids, XmlRpcStruct strct);
         [XmlRpcMethod("execute_kw")]

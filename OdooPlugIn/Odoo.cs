@@ -52,6 +52,16 @@ namespace OdooPlugIn
             return bs.CreatePartVendors(data.Data["parts"] as List<string>);
         }
 
+        /// <summary>
+        /// PO
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public ProcessResult CreateOdooOrders(ProcessData data) {
+            IOrderService os = new OrderService(data.Data["db"] as string);
+            return os.CreateOdooOrders();
+        }
+
 
     }
 }
