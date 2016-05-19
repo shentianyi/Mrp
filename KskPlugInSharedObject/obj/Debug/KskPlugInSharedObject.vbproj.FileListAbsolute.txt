@@ -24,3 +24,4 @@ D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbproj.Generate
 D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.dll
 D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.xml
 D:\dev\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.pdb
+C:\Users\Wangsong\Documents\GitHub\Mrp\KskPlugInSharedObject\obj\Debug\KskPlugInSharedObject.vbprojResolveAssemblyReference.cache
