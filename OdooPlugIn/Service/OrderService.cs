@@ -35,7 +35,6 @@ namespace OdooPlugIn.Service
                     List<Data_OrderedPart> orderedParts = new List<Data_OrderedPart>();
                     IDataOrderedPartRep rep = new DataOrderedPartRep(unit);
 
-
                     foreach (var orderLine in this.GetPurchaseOrderLines())
                     {
                         orderedParts.Add(new Data_OrderedPart()
@@ -80,6 +79,7 @@ namespace OdooPlugIn.Service
                     var groupMrpOrders = rep.GroupByVendorAndOrderDate();
                     OdooQueryContext qc = QueryContextHelper.GetOdooContext();
 
+                    this.CancelDraftMrpOrders();
 
                     foreach (var gmo in groupMrpOrders)
                     {
@@ -95,7 +95,7 @@ namespace OdooPlugIn.Service
                         if (pvs.Count > 0)
                         {
                             PartVendor pv = pvs.First();
-                            Order odooOrder = new Order() { partner_id = pv.vendor_id, date_order = order.orderDate.ToUniversalTime() };
+                            Order odooOrder = new Order() { partner_id = pv.vendor_id, date_order = order.orderDate.ToUniversalTime(),origin="IF_MRP" };
                             int orderId = qc.Create<Order>(odooOrder);
                             if (orderId > 0)
                             {
@@ -138,6 +138,16 @@ namespace OdooPlugIn.Service
                 result.Msgs.Add(e.Message);
             }
             return result;
+        }
+
+        public void CancelDraftMrpOrders()
+        {
+            //  throw new NotImplementedException();
+            List<Order> orders = QueryContextHelper.GetOdooContext().orders.Where(o => o.state.Equals("draft") && o.origin.Equals("IF_MRP") ).ToList();
+            if (orders.Count > 0)
+            {
+                QueryContextHelper.GetOdooContext().Updates<Order>(orders, orders.First().GetCancelXml());
+            }
         }
     }
 }

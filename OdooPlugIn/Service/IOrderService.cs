@@ -12,6 +12,7 @@ namespace OdooPlugIn.Service
         ProcessResult CreatePurchaseOrderLines();
         List<OrderLine> GetPurchaseOrderLines();
         ProcessResult CreateOdooOrders();
+        void CancelDraftMrpOrders();
     }
 
 }

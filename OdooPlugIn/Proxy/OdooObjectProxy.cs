@@ -56,11 +56,34 @@ namespace OdooPlugIn.Proxy
 
         public void Creates<T>(string db, int uid, string pwd, List<T> obj)
         {
+            throw new NotImplementedException();
+            //Type type = typeof(T);
+            //string modelName = GetModelName<T>(obj.First());
+            //MethodInfo mi = type.GetMethod("ConvertToXmls");
+            //XmlRpcStruct[] xmls = mi.Invoke(null,new object[1] { obj}) as XmlRpcStruct[];
+            //this.odooObject.Creates(db, uid, pwd, modelName, "create", new XmlRpcStruct[1][] { xmls });
+        }
+
+        public void Updates<T>(string db, int uid, string pwd, List<T> obj, XmlRpcStruct xml) {
             Type type = typeof(T);
             string modelName = GetModelName<T>(obj.First());
-            MethodInfo mi = type.GetMethod("ConvertToXmls");
-            XmlRpcStruct[] xmls = mi.Invoke(null,new object[1] { obj}) as XmlRpcStruct[];
-            this.odooObject.Creates(db, uid, pwd, modelName, "create", new XmlRpcStruct[1][] { xmls });
+            if (obj.Count > 0)
+            {
+                int[] ids = new int[obj.Count];
+                for (int i = 0; i < obj.Count; i++)
+                {
+                    PropertyInfo pi = type.GetProperty("id");
+                   
+                    object id = pi.GetValue(obj[i], null);
+                    if (id != null) {
+                        ids[i] =int.Parse( id.ToString());
+                    }
+                }
+                if (ids.Length > 0)
+                {
+                    this.odooObject.Write(db, uid, pwd, modelName, "write",new object[2] { ids,xml} );
+                }
+            }
         }
 
         public string GetModelName<T>(T obj) {

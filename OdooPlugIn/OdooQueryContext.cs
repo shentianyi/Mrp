@@ -8,6 +8,7 @@ using OdooPlugIn.Model.Mrp;
 using OdooPlugIn.Proxy;
 using OdooPlugIn.Model.Purchase;
 using OdooPlugIn.Model.Product;
+using CookComputing.XmlRpc;
 
 namespace OdooPlugIn
 {
@@ -30,6 +31,8 @@ namespace OdooPlugIn
         public OdooQueryable<Bom> boms = new OdooQueryable<Bom>();
         public OdooQueryable<BomLine> bomLines = new OdooQueryable<BomLine>();
         public OdooQueryable<Production> productions = new OdooQueryable<Production>();
+
+        public OdooQueryable<Order> orders = new OdooQueryable<Order>();
         public OdooQueryable<OrderLine> orderLines = new OdooQueryable<OrderLine>();
         public OdooQueryable<PartVendor> partVendors = new OdooQueryable<PartVendor>();
 
@@ -59,14 +62,23 @@ namespace OdooPlugIn
         public void Creates<T>(List<T> obj)
         {
             throw new NotImplementedException();
-            if (obj.Count > 0)
-            {
-                OdooCommonProxy cp = new OdooCommonProxy(Url);
-                int uid = cp.Authenticate(Db, UserName, Pwd);
-                OdooObjectProxy op = new OdooObjectProxy(Url);
+            //if (obj.Count > 0)
+            //{
+            //    OdooCommonProxy cp = new OdooCommonProxy(Url);
+            //    int uid = cp.Authenticate(Db, UserName, Pwd);
+            //    OdooObjectProxy op = new OdooObjectProxy(Url);
 
-                op.Creates<T>(Db, uid, Pwd, obj);
-            }
+            //    op.Creates<T>(Db, uid, Pwd, obj);
+            //}
+        }
+
+        public void Updates<T>(List<T> obj, XmlRpcStruct fields)
+        {
+            OdooCommonProxy cp = new OdooCommonProxy(Url);
+            int uid = cp.Authenticate(Db, UserName, Pwd);
+            OdooObjectProxy op = new OdooObjectProxy(Url);
+            op.Updates<T>(Db, uid, Pwd, obj, fields);
+
         }
 
     }
