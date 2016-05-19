@@ -10,13 +10,14 @@ namespace OdooPlugIn.Helper
     {
         public static string ParsePartNr(string partNr) {
             string _partNr = partNr;
-            if (partNr.Contains("[")) {
-                Regex r = new Regex(@"\w+");
-                Match m = r.Match(partNr);
-                if (m.Success)
-                {
-                    _partNr = m.NextMatch().Value.ToString();
-                }
+            if (partNr.Contains("[") && partNr.Contains("]")) {
+               _partNr= partNr.Split(']').Last().Trim();
+                //Regex r = new Regex(@"\w+");
+                //Match m = r.Match(partNr);
+                //if (m.Success)
+                //{
+                //    _partNr = m.NextMatch().Value.ToString();
+                //}
             }
             return _partNr;
         }
