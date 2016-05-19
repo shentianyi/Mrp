@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<configuration>
+  <configSections>
+    <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+  </configSections>
+
+  <log4net>
+    <!--EMAIL Notification-->
+
+
+    <appender name="ProcessMail" type="log4net.Appender.SmtpAppender">
+      <authentication value="Basic"/>
+      <to value="tianyi.shen@cz-tek.com" />
+      <from value="tianyi.shen@cz-tek.com" />
+      <subject value="MRP系统服务通知" />
+      <smtpHost value="smtp.exmail.qq.com" />
+      <username value="tianyi.shen@cz-tek.com"/>
+      <password value=""/>
+      <enableSsl value="true"/>
+      <port value="465"/>
+      <bufferSize value="0" />
+      <lossy value="true" />
+      <evaluator type="log4net.Core.LevelEvaluator">
+        <threshold value="WARN"/>
+      </evaluator>
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%newline%date [%thread] %-5level %logger [%property{NDC}] - %message%newline%newline%newline" />
+      </layout>
+    </appender>
+
+
+
+
+
+
+
+
+    <!--text notification-->
+
+    <appender type="log4net.Appender.RollingFileAppender" name="processLog">
+      <file value=".\proc.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="Size" />
+      <maxSizeRollBackups value="10" />
+      <maximumFileSize value="500KB" />
+      <staticLogFileName value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+      </layout>
+    </appender>
+
+    <logger name="BizLog">
+      <level value="DEBUG" />
+     <!-- <param value="DEBUG" name="Threshold" />-->
+      <appender-ref ref="processLog" />
+      <!--<appender-ref ref="ProcessMail"/>-->
+    </logger>
+
+   
+  </log4net>
+
+</configuration>
+

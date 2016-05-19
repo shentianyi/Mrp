@@ -24,8 +24,9 @@ Public Class MrpMain
             GenerateGrossMrp()
             GenerateNetMrp()
             GenerateResult()
+            SendResult()
         Catch ex As Exception
-
+            Throw New Exception("执行MRP时出现错误", ex)
         End Try
     End Sub
     Public Sub Init()

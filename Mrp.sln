@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Mrp", "Mrp\Mrp.vbproj", "{C00DA1FB-1601-43C5-A256-FAAA5F03EF4B}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZQueryFun", "ZQueryFun\ZQueryFun.csproj", "{F18EDBD2-E7CA-45A9-AF3C-7A25400DB41E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdooPlugInTests", "OdooPlugInTests\OdooPlugInTests.csproj", "{60B182FA-711E-4D07-B2BC-25B2DFD54E95}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MrpSvc", "MrpSvc\MrpSvc.vbproj", "{BC5BCD58-EB62-4807-B342-BBF3ADEC9CF6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MrpTask", "MrpTask\MrpTask.vbproj", "{4CDFF608-1946-419E-87AC-68D2C233FBC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +85,14 @@ Global
 		{60B182FA-711E-4D07-B2BC-25B2DFD54E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B182FA-711E-4D07-B2BC-25B2DFD54E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B182FA-711E-4D07-B2BC-25B2DFD54E95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC5BCD58-EB62-4807-B342-BBF3ADEC9CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC5BCD58-EB62-4807-B342-BBF3ADEC9CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC5BCD58-EB62-4807-B342-BBF3ADEC9CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC5BCD58-EB62-4807-B342-BBF3ADEC9CF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CDFF608-1946-419E-87AC-68D2C233FBC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CDFF608-1946-419E-87AC-68D2C233FBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CDFF608-1946-419E-87AC-68D2C233FBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CDFF608-1946-419E-87AC-68D2C233FBC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
