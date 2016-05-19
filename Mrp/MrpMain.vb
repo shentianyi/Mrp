@@ -275,6 +275,7 @@ Public Class MrpMain
                 nets.Add(net)
             End If
         Next
+        'ordered = Nothing
 
         db.Exe_NetMrps.InsertAllOnSubmit(nets)
         db.SubmitChanges()
